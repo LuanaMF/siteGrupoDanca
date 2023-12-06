@@ -13,17 +13,17 @@ export const siteConfig = {
       href: "/membros",
     },
     {
-      label: "Portfólio",
-      href: "/portfolio",
-    },
-    {
-      label: "Dance com a gente",
-      href: "/dance",
+      label: "Relatório de atividades",
+      href: "/atividades",
     },
     {
       label: "Contato",
       href: "/contato",
-    }
+    },
+	{
+		label: "Espetáculo Pandora",
+		href: "/pandora",
+	},
 	],
 	navMenuItems: [
 		{
@@ -35,17 +35,17 @@ export const siteConfig = {
 		  href: "/membros",
 		},
 		{
-		  label: "Portfólio",
-		  href: "/portfolio",
-		},
-		{
-		  label: "Dance com a gente",
-		  href: "/dance",
+		  label: "Relatório de atividades",
+		  href: "/atividades",
 		},
 		{
 		  label: "Contato",
 		  href: "/contato",
-		}
+		},
+		{
+			label: "Espetáculo Pandora",
+			href: "/pandora",
+		},
 	],
 	links: {
 		instagram: "https://www.instagram.com/cia.inflame/",

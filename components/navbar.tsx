@@ -19,20 +19,19 @@ import { Logo } from "@/components/icons";
 export const Navbar = () => {
 	
 	return (
-		<NextUINavbar maxWidth="xl" position="static">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-1" href="/">
+		<NextUINavbar className="" maxWidth="xl" position="static">
+			<div style={{justifyContent: 'start', maxWidth: '100px'}}>
+					<NavbarBrand >
 						<Logo />
-						
-					</NextLink>
-				</NavbarBrand>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+					</NavbarBrand>
+			</div>
+			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="center">
+				<ul className="hidden lg:flex gap-4 justify-start" >
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
 								className={clsx(
-									linkStyles({ color: "foreground" }),
+									linkStyles({ color: "warning" }),
 									"data-[active=true]:text-primary data-[active=true]:font-medium"
 								)}
 								color="foreground"
@@ -43,20 +42,6 @@ export const Navbar = () => {
 						</NavbarItem>
 					))}
 				</ul>
-			</NavbarContent>
-
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
-				<NavbarItem className="hidden sm:flex gap-2">
-					
-				</NavbarItem>
-				
-			</NavbarContent>
-
-			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				
 			</NavbarContent>
 
 			<NavbarMenu>

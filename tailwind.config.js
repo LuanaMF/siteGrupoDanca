@@ -9,8 +9,30 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
+    colors: {
+      'marrom': "#601802",
+      'marromVermelho': "#AA2704",
+      'pessego': "#FFB05D",
+      'pessego2': "#FFBD59",
+      'laranjao': "#FE800A",
+      'vermelho': "#E5392C"
+    },
     extend: {},
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(
+    {
+      themes: {
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: 'white',
+              foreground: "white"
+            }
+          },
+        },
+      },
+    }
+    
+  )]
 }
