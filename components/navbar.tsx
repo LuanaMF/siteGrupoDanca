@@ -26,9 +26,9 @@ export const Navbar = () => {
 					</NavbarBrand>
 			</div>
 			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="center">
-				<ul className="hidden lg:flex gap-4 justify-start" >
+				<ul className="hidden lg:flex gap-8 justify-start" >
 					{siteConfig.navItems.map((item) => (
-						<NavbarItem key={item.href}>
+						<NavbarItem  key={item.href}>
 							<NextLink
 								className={clsx(
 									linkStyles({ color: "foreground" }),
