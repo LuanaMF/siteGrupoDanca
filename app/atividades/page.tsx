@@ -11,38 +11,45 @@ import {
 } from "@nextui-org/react";
 
 export default function PricingPage() {
+
+	const classNames = React.useMemo(
+		() => ({
+		  wrapper: ["w-[80%]"],
+		  th: ["bg-laranjao", "text-[#FFFFFF]"],
+		  td: [
+			"bg-pessego2"
+		  ],
+		}),
+		[],
+	);
+
 	return (
 		<>
 			<div>
 				<h1 className={'font-semibold text-[1.5rem] lg:text-5xl leading-9 text-marrom'}>Relatório de atividades</h1>
 			</div>
-			<div>
-				<Table aria-label="Example static collection table">
+			<div className="flex mt-[30px] w-[100%] justify-center">
+				<Table removeWrapper aria-label="table" classNames={classNames} >
 					<TableHeader>
-						<TableColumn>NAME</TableColumn>
-						<TableColumn>ROLE</TableColumn>
-						<TableColumn>STATUS</TableColumn>
+						<TableColumn width={'30%'} >DATA</TableColumn>
+						<TableColumn>ATIVIDADE</TableColumn>
 					</TableHeader>
 				<TableBody>
 					<TableRow key="1">
-						<TableCell>Tony Reichert</TableCell>
-						<TableCell>CEO</TableCell>
-						<TableCell>Active</TableCell>
+						<TableCell>08/06 a 30/06 de 2021</TableCell>
+						<TableCell>Projeto "Junho Urbano InFlame" - 6 vídeos</TableCell>
 					</TableRow>
 						<TableRow key="2">
 						<TableCell>Zoey Lang</TableCell>
 						<TableCell>Technical Lead</TableCell>
-						<TableCell>Paused</TableCell>
 					</TableRow>
 						<TableRow key="3">
 						<TableCell>Jane Fisher</TableCell>
 						<TableCell>Senior Developer</TableCell>
-						<TableCell>Active</TableCell>
 					</TableRow>
 						<TableRow key="4">
 						<TableCell>William Howard</TableCell>
 						<TableCell>Community Manager</TableCell>
-						<TableCell>Vacation</TableCell>
 					</TableRow>
 				</TableBody>
 				</Table>

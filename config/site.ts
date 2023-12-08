@@ -13,7 +13,7 @@ export const siteConfig = {
       href: "/membros",
     },
     {
-      label: "Relatório de atividades",
+      label: "Nossas atividades",
       href: "/atividades",
     },
     {

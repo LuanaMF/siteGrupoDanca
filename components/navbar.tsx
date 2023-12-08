@@ -19,13 +19,14 @@ import { Logo } from "@/components/icons";
 export const Navbar = () => {
 	
 	return (
-		<NextUINavbar className="" maxWidth="xl" position="static">
-			<div style={{justifyContent: 'start', maxWidth: '100px'}}>
+		<NextUINavbar className="" maxWidth="xl" position="static" isBordered>
+			
+			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="start">
+			<div style={{justifyContent: 'start', maxWidth: '100px', marginRight: '20px'}}>
 					<NavbarBrand >
 						<Logo />
 					</NavbarBrand>
 			</div>
-			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="center">
 				<ul className="hidden lg:flex gap-8 justify-start" >
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem  key={item.href}>

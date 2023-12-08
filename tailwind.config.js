@@ -13,7 +13,7 @@ module.exports = {
       'marrom': "#601802",
       'marromVermelho': "#AA2704",
       'pessego': "#FFB05D",
-      'pessego2': "#FFBD59",
+      'pessego2': "#fae7d4",
       'laranjao': "#FE800A",
       'vermelho': "#E5392C"
     },
