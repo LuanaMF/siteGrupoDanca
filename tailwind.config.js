@@ -15,7 +15,9 @@ module.exports = {
       'pessego': "#FFB05D",
       'pessego2': "#fae7d4",
       'laranjao': "#FE800A",
-      'vermelho': "#E5392C"
+      'vermelho': "#E5392C",
+      'white': "#FFFFFF",
+      'black': '#000000'
     },
     extend: {
     },

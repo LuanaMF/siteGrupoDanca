@@ -20,10 +20,6 @@ export const siteConfig = {
       label: "Contato",
       href: "/contato",
     },
-	{
-		label: "Espetáculo Pandora",
-		href: "/pandora",
-	},
 	],
 	navMenuItems: [
 		{
@@ -41,10 +37,6 @@ export const siteConfig = {
 		{
 		  label: "Contato",
 		  href: "/contato",
-		},
-		{
-			label: "Espetáculo Pandora",
-			href: "/pandora",
 		},
 	],
 	links: {
