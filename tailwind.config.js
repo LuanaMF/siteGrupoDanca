@@ -17,7 +17,8 @@ module.exports = {
       'laranjao': "#FE800A",
       'vermelho': "#E5392C"
     },
-    extend: {},
+    extend: {
+    },
   },
   plugins: [nextui()]
 }
