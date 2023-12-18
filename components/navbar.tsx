@@ -15,6 +15,7 @@ import clsx from "clsx";
 
 
 import { Logo } from "@/components/icons";
+import { LogoCaixaPandora } from "@/components/icons";
 
 export const Navbar = () => {
 	
@@ -45,9 +46,9 @@ export const Navbar = () => {
 				</ul>
 			</NavbarContent>
 			<NavbarContent justify="end">
-				<NavbarItem>
-					<Button as={Link} className="bg-black text-marromVermelho font-bold shadow-md shadow-black tracking-wider uppercase" href="/pandora">
-						Pandora
+				<NavbarItem className="mt-[10px]">
+					<Button isIconOnly as={Link} className="bg-black shadow-md shadow-black w-[50%]" size="lg" href="/pandora">
+						<LogoCaixaPandora></LogoCaixaPandora>
 					</Button>
 				</NavbarItem>
 			</NavbarContent>
