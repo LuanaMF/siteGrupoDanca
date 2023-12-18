@@ -10,6 +10,12 @@ export const Logo: React.FC<IconSvgProps> = ({
 	<img src="/logos/LogoStudio.png"></img>
 );
 
+export const LogoCaixaPandora: React.FC<IconSvgProps> = ({
+	className
+}) => (
+	<img className={className} width={'160px'} height={'80px'} src="/imgs/logoPandora.png"></img>
+);
+
 export const DiscordIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,

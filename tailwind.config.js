@@ -13,26 +13,14 @@ module.exports = {
       'marrom': "#601802",
       'marromVermelho': "#AA2704",
       'pessego': "#FFB05D",
-      'pessego2': "#FFBD59",
+      'pessego2': "#fae7d4",
       'laranjao': "#FE800A",
-      'vermelho': "#E5392C"
+      'vermelho': "#E5392C",
+      'white': "#FFFFFF",
+      'black': '#000000'
     },
-    extend: {},
+    extend: {
+    },
   },
-  darkMode: "class",
-  plugins: [nextui(
-    {
-      themes: {
-        light: {
-          colors: {
-            primary: {
-              DEFAULT: 'white',
-              foreground: "black"
-            }
-          },
-        },
-      },
-    }
-    
-  )]
+  plugins: [nextui()]
 }

@@ -13,17 +13,13 @@ export const siteConfig = {
       href: "/membros",
     },
     {
-      label: "Relatório de atividades",
+      label: "Nossas atividades",
       href: "/atividades",
     },
     {
       label: "Contato",
       href: "/contato",
     },
-	{
-		label: "Espetáculo Pandora",
-		href: "/pandora",
-	},
 	],
 	navMenuItems: [
 		{
@@ -41,10 +37,6 @@ export const siteConfig = {
 		{
 		  label: "Contato",
 		  href: "/contato",
-		},
-		{
-			label: "Espetáculo Pandora",
-			href: "/pandora",
 		},
 	],
 	links: {
