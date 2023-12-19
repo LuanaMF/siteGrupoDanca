@@ -15,7 +15,7 @@ export default function PricingPage() {
 
 	const classNames = React.useMemo(
 		() => ({
-		  wrapper: [ "mt-6", "bg-[url('/imgs/fire-des.gif')]", "w-[10	0%]", "bg-bottom", "justify-center"],
+		  wrapper: [ "mt-6", "bg-[url('/imgs/fire-des.gif')]", "w-[100%]", "bg-bottom", "justify-center"],
 		  th: ["bg-laranjao", "text-[#FFFFFF]"],
 		  td: [
 			"bg-pessego2",
