@@ -1,9 +1,17 @@
 import { title } from "@/components/primitives";
+import {
+	Code
+} from "@nextui-org/react";
 
 export default function DocsPage() {
 	return (
-		<div>
-			<h1 className={title()}>Membros</h1>
-		</div>
+		<>
+			<div>
+				
+			</div>
+			<div>
+
+			</div>
+		</>
 	);
 }

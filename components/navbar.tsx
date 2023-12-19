@@ -47,9 +47,9 @@ export const Navbar = () => {
 			</NavbarContent>
 			<NavbarContent justify="end">
 				<NavbarItem className="mt-[10px]">
-					<Button isIconOnly as={Link} className="bg-black shadow-md shadow-black w-[50%]" size="lg" href="/pandora">
+					{/* <Button isIconOnly as={Link} className="bg-black shadow-md shadow-black w-[50%]" size="lg" href="/pandora">
 						<LogoCaixaPandora></LogoCaixaPandora>
-					</Button>
+					</Button> */}
 				</NavbarItem>
 			</NavbarContent>
 			<NavbarMenu>	
