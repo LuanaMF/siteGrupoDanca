@@ -48,14 +48,12 @@ export default function DocsPage() {
 		<>
 			<div className="gap-4 grid grid-cols-3 sm:grid-cols-6 mt-[200px]">
 				{list.map((item, index) => (
-					<Card shadow="sm" isHoverable key={index} className="bg-[url('/imgs/fogo-foto.png')] bg-cover bg-center min-w-[150px]">
+					<Card shadow="sm" isHoverable key={index} className="bg-[url('/imgs/fogo-foto.png')] bg-cover bg-bottom min-w-[150px]">
 						<CardHeader className="text-small justify-between">
 							<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{item.grupo}</Code>
 						</CardHeader>
 						<CardBody className=" p-0">
-							<Image
-							shadow="sm"
-							
+							<Image 
 							width="100%"
 							alt={item.nome}
 							className="w-full object-cover h-[140px]"
