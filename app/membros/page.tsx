@@ -146,7 +146,7 @@ export default function DocsPage() {
 				{list.map((item, index) => (
 					<Card isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px] shadow-lg shadow-marromVermelho">
 						<CardHeader className="text-small justify-between">
-							<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{item.grupo}</Code>
+							<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{'Dançarina'}</Code>
 						</CardHeader>
 						<CardBody className=" p-0">
 							<Image 
