@@ -142,9 +142,9 @@ export default function DocsPage() {
 
 	return (
 		<>
-			<div className=" justify-center gap-4 grid grid-cols-3 sm:grid-cols-7 mt-[175px] mb-[200px]">
+			<div className=" justify-center gap-8 grid grid-cols-3 sm:grid-cols-7 mt-[175px] mb-[200px]">
 				{list.map((item, index) => (
-					<Card shadow="sm" isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px]">
+					<Card isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px] shadow-lg shadow-marromVermelho">
 						<CardHeader className="text-small justify-between">
 							<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{item.grupo}</Code>
 						</CardHeader>
