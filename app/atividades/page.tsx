@@ -15,7 +15,7 @@ export default function PricingPage() {
 
 	const classNames = React.useMemo(
 		() => ({
-		  wrapper: [ "mt-6", "bg-[url('/imgs/fire-des.gif')]", "w-[100%]", "bg-bottom"],
+		  wrapper: [ "mt-6", "bg-[url('/imgs/fire-des.gif')]", "w-[100%]", "bg-bottom", "justify-center"],
 		  th: ["bg-laranjao", "text-[#FFFFFF]"],
 		  td: [
 			"bg-pessego2",
@@ -31,12 +31,12 @@ export default function PricingPage() {
 	return (
 		<>
 			<div>
-				<h1 className={'tracking-wide font-semibold text-[2.5rem] leading-9 text-marrom'}>Relatório de atividades</h1>
+				
 			</div>
 			<div>
-				<Code className="flex justify-center mt-[10px] bg-pessego font-bold text-white">Projetos | Oficinas | Apresentações</Code>
+				<Code className="flex justify-center mt-[100px] bg-pessego font-bold text-white">Projetos | Oficinas | Apresentações</Code>
 			</div>
-			<div className="flex mt-[30px] w-[100%] justify-center">
+			<div className="flex mt-[30px] w-[90%] justify-center">
 				<Table aria-label="table" classNames={classNames} >
 					<TableHeader>
 						<TableColumn width={'30%'} >DATA</TableColumn>
