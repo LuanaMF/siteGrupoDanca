@@ -17,7 +17,8 @@ module.exports = {
       'laranjao': "#FE800A",
       'vermelho': "#E5392C",
       'white': "#FFFFFF",
-      'black': '#000000'
+      'black': '#000000',
+      'gray': '#E2DCE1'
     },
     extend: {
     },

@@ -8,7 +8,8 @@ import {
 	TableColumn,
 	TableRow,
 	TableCell,
-	Code
+	Code,
+	Divider
 } from "@nextui-org/react";
 
 export default function PricingPage() {
@@ -16,13 +17,14 @@ export default function PricingPage() {
 	const classNames = React.useMemo(
 		() => ({
 		  wrapper: [ "mt-6", "bg-[url('/imgs/fire-des.gif')]", "w-[100%]", "bg-bottom", "justify-center"],
-		  th: ["bg-laranjao", "text-[#FFFFFF]"],
+		  th: ["bg-laranjao", "text-[#FFFFFF]", "font-extrabold", "tracking-wide"],
 		  td: [
 			"bg-pessego2",
 			"text-marrom",
 			"font-bold",
 			"text-base",
-			"font-mono"
+			"font-mono",
+
 		  ],
 		}),
 		[],

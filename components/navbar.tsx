@@ -6,6 +6,7 @@ import {
 	NavbarItem,
 	NavbarMenuItem,
 } from "@nextui-org/navbar";
+import {Divider} from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
 import { link as linkStyles } from "@nextui-org/theme";
 import { Button } from "@nextui-org/button";
@@ -20,7 +21,7 @@ import { LogoCaixaPandora } from "@/components/icons";
 export const Navbar = () => {
 	
 	return (
-		<NextUINavbar className="" maxWidth="xl" position="static" isBordered>
+		<NextUINavbar className="" maxWidth="xl" isBordered>
 			
 			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="start">
 				<div style={{ maxWidth: '100px', marginRight: '40px'}}>
@@ -30,18 +31,22 @@ export const Navbar = () => {
 				</div>
 				<ul className="hidden lg:flex gap-8" >
 					{siteConfig.navItems.map((item) => (
-						<NavbarItem  key={item.href}>
-							<NextLink
-								className={clsx(
-									linkStyles({ color: "foreground" }),
-									"data-[active=true]:text-marrom data-[active=true]:font-medium"
-								)}
-								color="foreground"
-								href={item.href}
-							>
-								{item.label}
-							</NextLink>
-						</NavbarItem>
+						<div key={item.href} className="flex h-5 items-center space-x-4 text-small">
+							<NavbarItem  key={item.href}>
+									<NextLink
+										className={clsx(
+											linkStyles({ color: "foreground" }),
+											"data-[active=true]:text-marrom data-[active=true]:font-medium"
+										)}
+										color="foreground"
+										href={item.href}
+									>
+										{item.label}
+									</NextLink>
+								<Divider orientation="vertical" />
+							</NavbarItem>
+						</div>
+						
 					))}
 				</ul>
 			</NavbarContent>

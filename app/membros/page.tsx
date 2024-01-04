@@ -41,14 +41,110 @@ export default function DocsPage() {
 			grupo: "Orange",
 			img: "/imgs/membro.png",
 		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
+		{
+			nome: "Orange",
+			idade: "21",
+			grupo: "Orange",
+			img: "/imgs/membro.png",
+		},
 	  ];
 	
 
 	return (
 		<>
-			<div className="gap-4 grid grid-cols-3 sm:grid-cols-6 mt-[200px]">
+			<div className=" justify-center gap-4 grid grid-cols-3 sm:grid-cols-7 mt-[175px] mb-[200px]">
 				{list.map((item, index) => (
-					<Card shadow="sm" isHoverable key={index} className="bg-[url('/imgs/fogo-foto.png')] bg-cover bg-bottom min-w-[150px]">
+					<Card shadow="sm" isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px]">
 						<CardHeader className="text-small justify-between">
 							<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{item.grupo}</Code>
 						</CardHeader>
@@ -57,7 +153,7 @@ export default function DocsPage() {
 							width="100%"
 							alt={item.nome}
 							className="w-full object-cover h-[140px]"
-							src={item.img}
+							src="/imgs/fotoPessoa.png"
 							/>
 						</CardBody>
 						<CardFooter className="justify-between mr-[10px] bg-pessego">
