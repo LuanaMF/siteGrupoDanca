@@ -2,8 +2,8 @@ import { title } from "@/components/primitives";
 
 export default function Contatos() {
 	return (
-		<div>
-			<h1 className={title()}>Contatos</h1>
+		<div className="mt-[100px]">
+			<h1 className={title()}>Contato</h1>
 		</div>
 	);
 }

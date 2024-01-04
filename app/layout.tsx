@@ -39,7 +39,7 @@ export default function RootLayout({
 						<Navbar />
 						<main className="flex-grow bg-[url('/imgs/fundo-com-fundo.png')] bg-cover backdrop-blur">
 							{children}
-						</main>
+						</main>	
 						<footer className="w-full flex items-center justify-center py-3">
 							{/* footer */}
 						</footer>	

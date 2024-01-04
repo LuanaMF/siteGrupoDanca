@@ -30,11 +30,12 @@ export default function PricingPage() {
 
 	return (
 		<>
+			
 			<div>
-				
-			</div>
-			<div>
-				<Code className="flex justify-center mt-[100px] bg-pessego font-bold text-white">Projetos | Oficinas | Apresentações</Code>
+				<Code 
+					className="flex justify-center mt-[150px] bg-pessego font-bold text-white" size="lg">
+					Projetos | Oficinas | Apresentações
+				</Code>
 			</div>
 			<div className="flex mt-[30px] w-[90%] justify-center">
 				<Table aria-label="table" classNames={classNames} >
