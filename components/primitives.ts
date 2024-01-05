@@ -10,12 +10,13 @@ export const title = tv({
 			cyan: "from-[#00b7fa] to-[#01cfea]",
 			green: "from-[#6FEE8D] to-[#17c964]",
 			pink: "text-[#C413A1]",
+			laranjao: 'text-[#FE800A]'
 		},
 		size: {
 			sm: "text-3xl lg:text-4xl",
 			md: "text-[2.3rem] lg:text-5xl leading-9",
 			lg: "text-4xl lg:text-6xl",
-			grande: "text-7xl"
+			grande: "text-8xl"
 		},
 		fullWidth: {
 			true: "w-full block",

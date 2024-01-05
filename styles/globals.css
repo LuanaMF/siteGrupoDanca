@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 h1{
-    background: linear-gradient(to right bottom, rgba(255, 136, 17, 0.9), rgba(255, 181, 93, 1) 130%);
+    background: white;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -37,12 +37,13 @@ export default function RootLayout({
 				<Providers themeProps={{ attribute: "class", defaultTheme: "light", forcedTheme: "light" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
-						<main className="flex-grow bg-[url('/imgs/fundo-com-fundo-blur.png')] bg-cover">
+						<main className="flex-grow bg-[url('/imgs/fundo-laranja-blur.png')] bg-cover">
 							{children}
-						</main>	
-						<footer className="w-full flex items-center justify-center py-3">
+							<footer className="w-full flex items-center justify-center py-3">
 							{/* footer */}
 						</footer>	
+						</main>	
+						
 					</div>
 				</Providers>
 			</body>

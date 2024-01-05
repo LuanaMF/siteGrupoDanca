@@ -1,10 +1,25 @@
 import { title } from "@/components/primitives";
+import {Input} from "@nextui-org/react";
+
 
 export default function Contatos() {
 	return (
-		<div className="mt-[100px]">
-			<h1 className={title()}>Contato</h1>
-		</div>
+		<>
+			
+			{/* Div à Esquerda com Cor Pêssego */}
+			<div id="corPessegp" className=" w-1/2 bg-marromVermelho p-8">
+      				{/* Conteúdo da Div co	m Cor Pêssego */}
+    		</div>	
+
+    		{/* Div à Direita com Imagem de Fundo */}
+   			<div id="r" className="bg-[url('/imgs/div.jpg')] w-1/2 bg-cover relative text-center">
+			   	{/* Título Sobreposto */}
+				<div id="titulo" className="text-center">
+					<h1 className={title()}>Contato</h1>
+				</div>
+      		</div>
+						
+		</>
 	);
 }
 // }
