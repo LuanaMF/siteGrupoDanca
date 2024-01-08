@@ -1,3 +1,4 @@
+"use client";
 import {
 	Navbar as NextUINavbar,
 	NavbarContent,
@@ -16,12 +17,16 @@ import clsx from "clsx";
 
 
 import { Logo } from "@/components/icons";
-import { LogoCaixaPandora } from "@/components/icons";
 
-export const Navbar = () => {
-	
+interface NavbarProps {
+	page: string;
+}
+  
+export const Navbar: React.FC<NavbarProps> = ({ page }) => {
+
 	return (
-		<NextUINavbar className="" maxWidth="xl" isBordered>
+		<NextUINavbar 
+		maxWidth="xl" isBordered>
 			
 			<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="start">
 				<div style={{ maxWidth: '100px', marginRight: '40px'}}>
@@ -32,12 +37,8 @@ export const Navbar = () => {
 				<ul className="hidden lg:flex gap-8" >
 					{siteConfig.navItems.map((item) => (
 						<div key={item.href} className="flex h-5 items-center space-x-4 text-small">
-							<NavbarItem  key={item.href}>
+							<NavbarItem  key={item.href} isActive={page == item.href? true : false}>
 									<NextLink
-										className={clsx(
-											linkStyles({ color: "foreground" }),
-											"data-[active=true]:text-marrom data-[active=true]:font-medium"
-										)}
 										color="foreground"
 										href={item.href}
 									>

@@ -7,7 +7,7 @@ export const Logo: React.FC<IconSvgProps> = ({
 	height,
 	...props
 }) => (
-	<img src="/logos/LogoStudio.png"></img>
+	<img src="/logos/LogoStudio.png" width={width} height={height}></img>
 );
 
 export const LogoCaixaPandora: React.FC<IconSvgProps> = ({
