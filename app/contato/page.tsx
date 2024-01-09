@@ -17,6 +17,27 @@ export default function Contatos() {
 		mensagem: ''
 	});
 
+	const handler = async () => {
+			try {
+			  const response = await fetch('/api/email', {
+				method: 'POST',
+				headers: {
+				  'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(email),
+			  });
+		
+			  if (!response.ok) {
+				throw new Error('Erro na requisição');
+			  }
+		
+			  const responseData = await response.json();
+			  
+			} catch (error) {
+			  console.error('Erro:', error);
+			}
+	};
+
 	return (
 		<>
 			<div id="r" className=" w-1/2 bg-cover relative text-center">
@@ -53,6 +74,7 @@ export default function Contatos() {
 									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
 									input: ['text-primary']
 								}}
+								onValueChange={(e) => email.nome = e }
 							/>
 
 							<Input
@@ -65,6 +87,7 @@ export default function Contatos() {
 									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
 									input: ['text-primary']
 								}}
+								onValueChange={(e) => email.telefone = e}
 							/>
 
 							<Textarea
@@ -76,9 +99,12 @@ export default function Contatos() {
 									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
 									input: ['text-primary']
 								}}
+								onValueChange={(e) => email.mensagem = e}
 							/>
  
-							<Button  className="justify-self-center text-white bg-vermelho tracking-widest" endContent={<SendIcon/>}>
+							<Button  className="justify-self-center text-white bg-vermelho tracking-widest" endContent={<SendIcon/>}
+								onPress={handler}
+							>
 								Enviar email
 							</Button> 
 
