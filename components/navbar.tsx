@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ page }) => {
 			<NextUINavbar 
 				maxWidth="xl" isBordered>
 				
-				<NavbarContent className="basis-1/5 sm:basis-full -ml-[87px]" justify="start">
+				<NavbarContent className="basis-1/5 sm:basis-full " justify="start">
 					<div style={{ maxWidth: '100px', marginRight: '40px'}}>
 							<NavbarBrand >
 								<Logo />
