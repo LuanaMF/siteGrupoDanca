@@ -7,7 +7,16 @@ export const Logo: React.FC<IconSvgProps> = ({
 	height,
 	...props
 }) => (
-	<img src="/logos/LogoStudio.png"></img>
+	<img src="/logos/LogoStudio.png" width={width} height={height}></img>
+);
+
+export const LogoBlack: React.FC<IconSvgProps> = ({
+	size = 36,
+	width,
+	height,
+	...props
+}) => (
+	<img src="/logos/logo-black.png" width={width} height={height}></img>
 );
 
 export const LogoCaixaPandora: React.FC<IconSvgProps> = ({

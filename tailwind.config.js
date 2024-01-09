@@ -17,10 +17,24 @@ module.exports = {
       'laranjao': "#FE800A",
       'vermelho': "#E5392C",
       'white': "#FFFFFF",
-      'black': '#000000'
-    },
+      'black': '#000000',
+      'gray': '#E2DCE1',    },
     extend: {
     },
   },
-  plugins: [nextui()]
+  plugins: [nextui({ 
+    themes: {
+      light: {
+        colors: {
+          primary: {
+            DEFAULT: "#FFFFFF",
+          },
+          warning:{
+            DEFAULT: "#FFB05D",
+          }
+        
+        },
+      },
+    }
+  })]
 }
