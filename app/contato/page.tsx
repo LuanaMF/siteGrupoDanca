@@ -1,12 +1,13 @@
 "use client";
 
 import { title } from "@/components/primitives";
-import {Input, Card, CardBody, CardFooter, CardHeader, Divider, Textarea, Link} from "@nextui-org/react";
-import { SiteConfig, siteConfig } from "@/config/site";
-import { Logo } from "@/components/icons";
-
+import {Input, Card, CardBody, CardFooter, CardHeader, Divider, Textarea, Link, Button} from "@nextui-org/react";
+import { LogoBlack } from "@/components/icons";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ForwardToInboxOutlinedIcon from '@mui/icons-material/ForwardToInboxOutlined';
 import { useState } from "react";
+import SendIcon from '@mui/icons-material/Send';
 
 export default function Contatos() {
 
@@ -28,50 +29,82 @@ export default function Contatos() {
       		</div>
 
 			{/* Div à Esquerda com Cor Pêssego */}
-			<div id="corPessegp" className="rounded-md w-1/2 p-5">
+			<div id="corPessegp" className="rounded-md w-1/2 p-5 -mt-16">
 
 				<Card className='card w-full h-full bg-' >
 
 					<CardHeader className="justify-center min-h-40">
-						<Logo width={'50%'}></Logo>
+						<LogoBlack width={'50%'}></LogoBlack>
 					</CardHeader>
 
 					<Divider />
 
 					<CardBody >
 
-						<form>
+						<form className="grid w-full h-full space-y-4 justify-content-center">
 
 							<Input
-								color="warning"
+								id="teste"
 								label="Nome"
+								color="primary"
+								variant="underlined"
+								size="lg"
+								classNames={{
+									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
+									input: ['text-primary']
+								}}
 							/>
 
 							<Input
-								color="warning"
+								color="primary"
 								label="Telefone"
 								maxLength={14}
+								variant="underlined"
+								size="lg"
+								classNames={{
+									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
+									input: ['text-primary']
+								}}
 							/>
 
 							<Textarea
-								color="warning"
+								color="primary"
 								label="Mensagem"
+								variant="underlined"
+								size="lg"
+								classNames={{
+									label: 'font-semibold group-data-[filled-within=true]:text-primary ',
+									input: ['text-primary']
+								}}
 							/>
+ 
+							<Button  className="justify-self-center text-white bg-vermelho tracking-widest" endContent={<SendIcon/>}>
+								Enviar email
+							</Button> 
 
 						</form>
 					</CardBody>
-
-					<CardFooter >
-					
-						<div style={{justifyContent: 'center'}}>
-							<Link isExternal  aria-label="Twitter">
-							</Link>
-							<Link isExternal  aria-label="Discord">
-							</Link>
-							<Link isExternal  aria-label="Github">
-							</Link>
+					<Divider />
+					<CardFooter className="flex flex-col items-center md:flex-row justify-center md:items-center">
+  						<h1 className="mb-4 md:mb-0 md:mr-4">Ou, se preferir, contate-nos via:</h1>
+						<div className="flex space-x-2">
+							<Button
+								href="https://www.instagram.com/cia.inflame/"
+								as={Link}
+								isIconOnly 
+								radius="full"
+							>
+								<InstagramIcon sx={{ color: "#E4405F" }}/>
+							</Button>
+							<Button
+								href="https://www.whatsapp.com/"
+								as={Link}
+								isIconOnly 
+								radius="full"
+							>
+								<WhatsAppIcon sx={{ color: "#25D366" }}/>
+							</Button>
 						</div>
-
 					</CardFooter>
 
 				</Card>
