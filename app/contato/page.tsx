@@ -31,13 +31,13 @@ export default function Contatos() {
 			{/* Div à Esquerda com Cor Pêssego */}
 			<div id="corPessegp" className="rounded-md w-1/2 p-5 -mt-16">
 
-				<Card className='card w-full h-full bg-' >
+				<Card className='w-full h-full bg- shadow-xl shadow-marrom' >
 
 					<CardHeader className="justify-center min-h-40">
 						<LogoBlack width={'50%'}></LogoBlack>
 					</CardHeader>
 
-					<Divider />
+					<Divider/>
 
 					<CardBody >
 
@@ -84,7 +84,7 @@ export default function Contatos() {
 
 						</form>
 					</CardBody>
-					<Divider />
+					<Divider  />
 					<CardFooter className="flex flex-col items-center md:flex-row justify-center md:items-center">
   						<h1 className="mb-4 md:mb-0 md:mr-4">Ou, se preferir, contate-nos via:</h1>
 						<div className="flex space-x-2">
