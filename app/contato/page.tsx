@@ -8,6 +8,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ForwardToInboxOutlinedIcon from '@mui/icons-material/ForwardToInboxOutlined';
 import { useState } from "react";
 import SendIcon from '@mui/icons-material/Send';
+import React from "react";
 
 export default function Contatos() {
 
@@ -17,25 +18,40 @@ export default function Contatos() {
 		mensagem: ''
 	});
 
+	const verificacao = () => {
+		if (email.nome === '' || email.telefone === '' || email.mensagem === ''){
+			return false;
+		} 
+		else{
+			return true
+		} 
+	 
+	};
+
 	const handler = async () => {
+		if(verificacao()){
 			try {
-			  const response = await fetch('/api/email', {
-				method: 'POST',
-				headers: {
-				  'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(email),
-			  });
-		
-			  if (!response.ok) {
-				throw new Error('Erro na requisição');
+				const response = await fetch('/api/email', {
+				  method: 'POST',
+				  headers: {
+					'Content-Type': 'application/json',
+				  },
+				  body: JSON.stringify(email),
+				});
+		  
+				if (!response.ok) {
+				  throw new Error('Erro na requisição');
+				}
+		  
+				const responseData = await response.json();
+				
+			  } catch (error) {
+				console.error('Erro:', error);
 			  }
-		
-			  const responseData = await response.json();
-			  
-			} catch (error) {
-			  console.error('Erro:', error);
-			}
+		}else{
+			console.log('nah ah');
+		}
+			
 	};
 
 	return (
@@ -65,6 +81,7 @@ export default function Contatos() {
 						<form className="grid w-full h-full space-y-4 justify-content-center">
 
 							<Input
+								isRequired
 								id="teste"
 								label="Nome"
 								color="primary"
@@ -78,6 +95,7 @@ export default function Contatos() {
 							/>
 
 							<Input
+								isRequired
 								color="primary"
 								label="Telefone"
 								maxLength={14}
@@ -91,6 +109,7 @@ export default function Contatos() {
 							/>
 
 							<Textarea
+								isRequired
 								color="primary"
 								label="Mensagem"
 								variant="underlined"
