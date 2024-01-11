@@ -12,7 +12,7 @@ import {
 	Divider
 } from "@nextui-org/react";
 
-export default function PricingPage() {
+export default function Atividades() {
 
 	const classNames = React.useMemo(
 		() => ({
@@ -32,14 +32,15 @@ export default function PricingPage() {
 
 	return (
 		<>
+			<section id="section-atividades" className="flex flex-col items-center justify-center gap-4">
 			
-			<div>
-				<Code 
-					className="flex justify-center mt-[150px] bg-pessego font-bold text-white" size="lg">
-					Projetos | Oficinas | Apresentações
-				</Code>
-			</div>
-			<div className="flex mt-[30px] w-[90%] justify-center">
+				<div>
+					<Code 
+						className="flex justify-center mt-[150px] bg-pessego font-bold text-white" size="lg">
+						Projetos | Oficinas | Apresentações
+					</Code>
+				</div>
+				<div className="flex mt-[30px] w-[90%] justify-center">
 				<Table aria-label="table" classNames={classNames} >
 					<TableHeader>
 						<TableColumn width={'30%'} >DATA</TableColumn>
@@ -66,6 +67,9 @@ export default function PricingPage() {
 					</TableBody>
 				</Table>
 			</div>
+		
+			</section>
+			
 		</>
 	);
 }

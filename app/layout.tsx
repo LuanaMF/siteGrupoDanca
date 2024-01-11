@@ -1,27 +1,12 @@
 
 import "@/styles/globals.css";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-
-export const metadata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	icons: {
-		icon: "/logos/LOGORESUMIDA.png",
-		shortcut: "/favicon-16x16.png",
-		apple: "/apple-touch-icon.png",
-	},
-};
-
+import SobreNos from "./page";
+import Membros from "./membros/page";
+import Atividades from "./atividades/page";
+import Contato from "./contato/page";
 
 export default function RootLayout({
 	children,
@@ -43,10 +28,17 @@ export default function RootLayout({
 					<div className="relative flex flex-col h-screen">
 						
 						<main className="flex-grow bg-[url('/imgs/fundo-vermelho-blur.png')] bg-cover">
-							{children}
+
+							<SobreNos></SobreNos>
+							<Membros></Membros>
+							<Atividades></Atividades>
+							<Contato></Contato>
+							
+							
 							<footer className="w-full flex items-center justify-center py-3">
-							{/* footer */}
+								{/* footer */}
 							</footer>	
+							
 						</main>	
 						
 					</div>
