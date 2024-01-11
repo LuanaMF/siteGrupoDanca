@@ -42,8 +42,6 @@ export default function Contato() {
 				if (!response.ok) {
 				  throw new Error('Erro na requisição');
 				}
-		  
-				const responseData = await response.json();
 				
 			  } catch (error) {
 				console.error('Erro:', error);
