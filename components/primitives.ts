@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const title = tv({
-	base: "font-extrabold tracking-tight inline tracking-wide text-shadow-sm",
+	base: "font-extrabold tracking-tight inline tracking-wide text-shadow-sm cursor-none",
 	variants: {
 		color: {
 			violet: "from-[#FF1CF7] to-[#b249f8]",

@@ -2,15 +2,11 @@ import { Snippet } from "@nextui-org/snippet";
 import { Code } from "@nextui-org/code"
 import { title, subtitle } from "@/components/primitives";
 
-export default function Home() {
+export default function SobreNos() {
 	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+		<section id="section-sobreNos" className="flex flex-col items-center justify-center h-screen overflow-hidden">
 			<div className="inline-block max-w-lg text-center justify-center">
-				
-			</div>
-
-			<div className="flex gap-3">
-				
+				<h1>SOBRE NOIS</h1>
 			</div>
 
 			<div className="mt-8">

@@ -7,18 +7,22 @@ export const siteConfig = {
 	{
 		label: "Sobre Nós",
 		href: "/",
+		id:"section-sobreNos"
 	},
     {
       label: "Membros",
       href: "/membros",
+	  id:"section-membros"
     },
     {
       label: "Nossas atividades",
       href: "/atividades",
+	  id:"section-atividades"
     },
     {
       label: "Contato",
       href: "/contato",
+	  id:"section-contato"
     },
 	],
 	navMenuItems: [

@@ -17,6 +17,7 @@ import clsx from "clsx";
 import styles from "@/styles/navbar.module.css";
 
 import { Logo } from "@/components/icons";
+import { useState } from "react";
 
 interface NavbarProps {
 	page: string;
@@ -24,6 +25,14 @@ interface NavbarProps {
   
 export const Navbar: React.FC<NavbarProps> = ({ page }) => {
 	
+	const [scrolling, setScrolling] = useState(false);
+
+	const handleNavigationClick = (sectionId: string) => {
+	  setScrolling(true);
+	  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+	  setTimeout(() => setScrolling(false), 1000); // Reset scrolling state after animation
+	};
+
 	return (
 		
 			<NextUINavbar 
@@ -35,22 +44,21 @@ export const Navbar: React.FC<NavbarProps> = ({ page }) => {
 								<Logo />
 							</NavbarBrand>
 					</div>
-					<ul className="hidden lg:flex gap-8" >
+					<ul className="hidden lg:flex gap-8">
 						{siteConfig.navItems.map((item) => (
-							<div key={item.href} className="flex h-5 items-center space-x-4 text-small">
-								<NavbarItem  key={item.href} isActive={page == item.href? true : false}>
-										<NextLink
-											color="foreground"
-											href={item.href}
-										>
-											{item.label}
-										</NextLink>
-									<Divider orientation="vertical" />
-								</NavbarItem>
+							<div key={item.href} className="flex h-5 items-center space-x-4 text-small cursor-pointer">
+							<NavbarItem key={item.href} isActive={page === item.href ? true : false}>
+								<div
+								onClick={() => handleNavigationClick(item.id)}
+								className={clsx(styles.navItem, { [styles.scrollActive]: scrolling })}
+								>
+								{item.label}
+								</div>
+								<Divider orientation="vertical" />
+							</NavbarItem>
 							</div>
-							
 						))}
-					</ul>
+    				</ul>
 				</NavbarContent>
 				<NavbarContent justify="end">
 					<NavbarItem className="mt-[10px]">
