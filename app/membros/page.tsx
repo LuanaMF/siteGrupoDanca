@@ -138,13 +138,12 @@ export default function Membros() {
 			img: "/imgs/membro.png",
 		},
 	  ];
-	
 
 	return (
 		<>
-			<section id="section-membros" className="flex flex-col items-center justify-center gap-4">
-			
+			<section id="section-membros" className="flex flex-col items-center justify-center h-screen">
 				<div className=" justify-center gap-8 grid grid-cols-3 sm:grid-cols-7 mt-[175px] mb-[200px]">
+
 					{list.map((item, index) => (
 						<Card isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px] shadow-lg shadow-marromVermelho">
 							<CardHeader className="text-small justify-between">
@@ -152,6 +151,7 @@ export default function Membros() {
 							</CardHeader>
 							<CardBody className=" p-0">
 								<Image 
+								isZoomed
 								width="100%"
 								alt={item.nome}
 								className="w-full object-cover h-[140px]"

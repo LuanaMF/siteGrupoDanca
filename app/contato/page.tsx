@@ -53,17 +53,16 @@ export default function Contato() {
 		}
 			
 	};
-
 	return (
 		<>
-		<section id="section-contato" className="flex items-center justify-center">
+		<section id="section-contato" className="flex items-center justify-center h-[90%] overflow-hidden">
 			<div id="principal" className="flex justify-center w-full h-[600px] relative mt-[80px] px-60">
 				<div id="r" className=" w-1/2 bg-cover relative text-center">
 					{/* Título Sobreposto */}
 					<div id="titulo" className="text-center">
 						<h1 className={title()}>Contato</h1>
 					</div>
-					<ForwardToInboxOutlinedIcon className="mt-36" 
+					<ForwardToInboxOutlinedIcon className="mt-36 cursor-none" 
 					sx={{ fontSize: 200, color: "white" }}></ForwardToInboxOutlinedIcon>
 				</div>
 

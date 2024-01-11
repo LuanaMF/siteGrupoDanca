@@ -29,18 +29,18 @@ export default function Atividades() {
 		}),
 		[],
 	);
-
+		
 	return (
 		<>
-			<section id="section-atividades" className="flex flex-col items-center justify-center gap-4">
-			
+			<section id="section-atividades" className="flex flex-col items-center justify-center h-screen overflow-hidden">
+				
 				<div>
 					<Code 
-						className="flex justify-center mt-[150px] bg-pessego font-bold text-white" size="lg">
+						className="flex justify-center bg-pessego font-bold text-white cursor-none" size="lg">
 						Projetos | Oficinas | Apresentações
 					</Code>
 				</div>
-				<div className="flex mt-[30px] w-[90%] justify-center">
+				<div className="flex w-[90%] justify-center">
 				<Table aria-label="table" classNames={classNames} >
 					<TableHeader>
 						<TableColumn width={'30%'} >DATA</TableColumn>
