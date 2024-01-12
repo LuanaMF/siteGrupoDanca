@@ -8,7 +8,7 @@ import SobreNos from "./page";
 import Membros from "./membros/page";
 import Atividades from "./atividades/page";
 import Contato from "./contato/page";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 
@@ -54,6 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="overflow-y-hidden">
       <head />
+      
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",

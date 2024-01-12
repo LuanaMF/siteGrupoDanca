@@ -16,21 +16,12 @@ export interface ProvidersProps {
 
 export function Providers({ children, themeProps }: ProvidersProps) {
   	const router = useRouter();
-	const [page, setPage] = useState('');
-	const pathname = usePathname();
-
-	useEffect(() => {
-		const handleRouteChange = () => {
-			setPage(pathname);
-		};
-		handleRouteChange();
-		
-	}, [pathname]);
+	
 
 	return (
 		<NextUIProvider navigate={router.push}>
 			<NextThemesProvider {...themeProps}>
-					<Navbar page={page}/>	
+					<Navbar/>	
 					{children}
 			</NextThemesProvider>
 		</NextUIProvider>
