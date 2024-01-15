@@ -53,7 +53,7 @@ export default function Contato() {
 	};
 	return (
 		<>
-		<section id="section-contato" className="flex items-center justify-center h-[80%] overflow-hidden">
+		<section id="section-contato" className="flex items-center justify-center h-[95%] overflow-hidden">
 			<div id="principal" className="flex justify-center w-full h-[600px] relative mt-[80px] px-60">
 				<div id="r" className=" w-1/2 bg-cover relative text-center">
 					{/* Título Sobreposto */}	
