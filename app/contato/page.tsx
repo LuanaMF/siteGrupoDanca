@@ -3,11 +3,11 @@
 import { title } from "@/components/primitives";
 import {Input, Card, CardBody, CardFooter, CardHeader, Divider, Textarea, Link, Button} from "@nextui-org/react";
 import { LogoBlack } from "@/components/icons";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from "@mui/icons-material/Instagram"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import ForwardToInboxOutlinedIcon from '@mui/icons-material/ForwardToInboxOutlined';
 import { useState } from "react";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send"
 import React from "react";
 
 export default function Contato() {
@@ -42,8 +42,6 @@ export default function Contato() {
 				if (!response.ok) {
 				  throw new Error('Erro na requisição');
 				}
-		  
-				const responseData = await response.json();
 				
 			  } catch (error) {
 				console.error('Erro:', error);
@@ -55,10 +53,10 @@ export default function Contato() {
 	};
 	return (
 		<>
-		<section id="section-contato" className="flex items-center justify-center h-[90%] overflow-hidden">
+		<section id="section-contato" className="flex items-center justify-center h-[95%] overflow-hidden">
 			<div id="principal" className="flex justify-center w-full h-[600px] relative mt-[80px] px-60">
 				<div id="r" className=" w-1/2 bg-cover relative text-center">
-					{/* Título Sobreposto */}
+					{/* Título Sobreposto */}	
 					<div id="titulo" className="text-center">
 						<h1 className={title()}>Contato</h1>
 					</div>

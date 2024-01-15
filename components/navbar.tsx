@@ -19,18 +19,17 @@ import styles from "@/styles/navbar.module.css";
 import { Logo } from "@/components/icons";
 import { useState } from "react";
 
-interface NavbarProps {
-	page: string;
-}
-  
-export const Navbar: React.FC<NavbarProps> = ({ page }) => {
+
+export const Navbar  = () => {
 	
 	const [scrolling, setScrolling] = useState(false);
+	const [section, setSection] = useState('section-sobreNos');
 
 	const handleNavigationClick = (sectionId: string) => {
 	  setScrolling(true);
+	  setSection(sectionId);
 	  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-	  setTimeout(() => setScrolling(false), 1000); // Reset scrolling state after animation
+	  setTimeout(() => setScrolling(false), 1000);
 	};
 
 	return (
@@ -47,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ page }) => {
 					<ul className="hidden lg:flex gap-8">
 						{siteConfig.navItems.map((item) => (
 							<div key={item.href} className="flex h-5 items-center space-x-4 text-small cursor-pointer">
-							<NavbarItem key={item.href} isActive={page === item.href ? true : false}>
+							<NavbarItem key={item.href} isActive={section === item.id ? true : false}>
 								<div
 								onClick={() => handleNavigationClick(item.id)}
 								className={clsx(styles.navItem, { [styles.scrollActive]: scrolling })}

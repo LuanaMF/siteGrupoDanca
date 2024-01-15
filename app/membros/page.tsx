@@ -141,7 +141,7 @@ export default function Membros() {
 
 	return (
 		<>
-			<section id="section-membros" className="flex flex-col items-center justify-center h-screen">
+			<section id="section-membros" className="flex flex-col items-center justify-center h-screen overflow-hidden">
 				<div className=" justify-center gap-8 grid grid-cols-3 sm:grid-cols-7 mt-[175px] mb-[200px]">
 
 					{list.map((item, index) => (
