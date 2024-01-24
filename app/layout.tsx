@@ -65,8 +65,8 @@ export default function RootLayout({
           themeProps={{ attribute: "class", defaultTheme: "light", forcedTheme: "light" }}
         >
           <div className="relative flex flex-col h-screen overflow-hidden">
-            <motion.main className="flex-grow bg-[url('/imgs/fundo-vermelho-blur.png')] bg-cover overflow-y-scroll w-screen h-screen">
-
+            <motion.main className="flex-grow  bg-[url('/imgs/fundo-vermelho-blur.png')] bg-cover overflow-y-scroll w-screen h-screen">
+            {/*  */}
               <motion.div
                 ref={refSobreNos}
                 initial="hidden"
