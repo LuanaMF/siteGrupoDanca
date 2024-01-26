@@ -65,8 +65,8 @@ export default function RootLayout({
           themeProps={{ attribute: "class", defaultTheme: "light", forcedTheme: "light" }}
         >
           <div className="relative flex flex-col h-screen overflow-hidden">
-            <motion.main className="flex-grow  bg-[url('/imgs/fundo-vermelho-blur.png')] bg-cover overflow-y-scroll w-screen h-screen">
-            {/*  */}
+            <motion.main className="flex-grow   bg-cover overflow-y-scroll w-screen h-screen">
+            {/* bg-[url('/imgs/fundo-vermelho-blur.png')] */}
               <motion.div
                 ref={refSobreNos}
                 initial="hidden"
@@ -77,7 +77,7 @@ export default function RootLayout({
                 <SobreNos />
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 ref={refMembros}
                 initial="hidden"
                 animate={inViewMembros ? "visible" : "hidden"}
@@ -104,7 +104,7 @@ export default function RootLayout({
                 transition={{ duration: 0.9}}
               >
                 <Contato />
-              </motion.div>
+              </motion.div> */}
             
             </motion.main>
           </div>

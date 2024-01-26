@@ -25,19 +25,7 @@ export const title = tv({
 	defaultVariants: {
 		size: "grande"
 	},
-	compoundVariants: [
-		{
-		  color: [
-			"violet",
-			"yellow",
-			"blue",
-			"cyan",
-			"green",
-			"pink",
-		  ],
-		  class: ''
-		},
-	],
+	
 });
 
 export const subtitle = tv({
