@@ -19,6 +19,24 @@ export const LogoBlack: React.FC<IconSvgProps> = ({
 	<img src="/logos/logo-black.png" width={width} height={height}></img>
 );
 
+export const LogoStudio: React.FC<IconSvgProps> = ({
+	size = 36,
+	width,
+	height,
+	...props
+}) => (
+	<img src="/logos/LogoStudio.png" width={width} height={height}></img>
+);
+
+export const LogoP2: React.FC<IconSvgProps> = ({
+	size = 36,
+	width,
+	height,
+	...props
+}) => (
+	<img src="/logos/LogoP2.png" width={width} height={height}></img>
+);
+
 export const LogoCaixaPandora: React.FC<IconSvgProps> = ({
 	className
 }) => (

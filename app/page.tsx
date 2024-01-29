@@ -12,6 +12,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
+import { LogoBlack, LogoP2, LogoStudio } from "@/components/icons";
 
 function titleQuemSomos(){
   return(
@@ -98,14 +99,21 @@ function quemSomos() {
   );
 }
 
+function Principal(){
+  return(
+    <div className="center">
+      <LogoBlack width={'30%'} height={'30%'}></LogoBlack>
+    </div>
+  );
+}
+
 const slidesData = [
   {
-    title: 'InFlame - Cia de dança',
-    content: ''
+    content: Principal(),
   },
   {
     title: titleQuemSomos(),
-    content: quemSomos()
+    content: quemSomos(),
   },
   {
     title: "Nossa História",
@@ -137,14 +145,21 @@ export default function SobreNos() {
       <div className="justify-center w-[90%] h-[80%]">
         <Slider {...sliderSettings} className="grid w-full h-full border-none">
           {slidesData.map((slide, index) => (
-            <div key={index} id="grid" className="grid grid-rows-3">
-              <div className="flex w-full h-full row-span-1">
-                {slide.title}
+            index !== 0 ? (
+              <div key={index} id="grid" className="grid grid-rows-3">
+                <div className="w-full h-full row-span-1">
+                  {slide.title}
+                </div>
+                <div className="-mt-2 w-full h-full row-span-2">
+                  {slide.content}
+                </div>
               </div>
-              <div className="-mt-2 w-full h-full row-span-2">
+            ) : (
+              <div key={index}>
                 {slide.content}
               </div>
-            </div>
+            )
+            
           ))}
         </Slider>
       </div>
