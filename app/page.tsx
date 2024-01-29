@@ -4,83 +4,98 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { title, subtitle } from "@/components/primitives";
-import { Avatar, Card, CardBody, CardFooter, CardHeader, Divider, Image } from "@nextui-org/react";
+import { Avatar, Card, CardBody, CardFooter, CardHeader, Code, Divider, Image } from "@nextui-org/react";
 import InfoIcon from '@mui/icons-material/Info';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import GroupsIcon from '@mui/icons-material/Groups';
 import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
+import PlaceIcon from '@mui/icons-material/Place';
 
-
-function quemSomos(){
+function titleQuemSomos(){
   return(
-    <div className="mt-10 ml-8">
-      <Card className="py-4 mix-blend-darken bg-pessego w-auto border-none w-[350px] h-[250px] shadow-lg shadow-marrom">
-        <CardHeader className="center ">
-            <h2 className="icon_label text-xl text-center" >
-              <WhatshotIcon sx={{fontSize: '35px'}}/>
-                Sobre nós
-              <WhatshotIcon sx={{fontSize: '35px'}}/>
-            </h2>
+    <div className=" h-full laranjao">
+      <h1 className={`${title()} row-span-1 justify-self-start sm:text-6xl md:text-5xl lg:text-8xl`}>Quem Somos</h1>
+    </div>    
+  );
+}
+
+function quemSomos() {
+  return (
+    <div className="flex mx-4 my-0 justify-evenly">
+      <Card className="py-4 m-0 rounded-lg border-8 border-pessego bg-transparent w-full lg:w-[500px] sm:w-[350px] h-auto lg:h-[300px] sm:h-[250px] shadow-lg shadow-marrom ">
+        <CardHeader className="center">
+          <Code className="center bg-laranjao w-full opacity-85">
+            <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginRight: '2px' }} />
+              <h2 className="icon_label !text-2xl text-center">
+                  Sobre nós
+              </h2> 
+            <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginLeft: '2px' }} />
+          </Code>
+          
         </CardHeader>
-        <CardBody className="items-center justify-center gap-4">
-          <h2 className="icon_label -ml-5">
-            <InfoIcon sx={{color: "#601802" }}></InfoIcon>
+        <CardBody className="grid grid-rows-3 grid-cols-1 gap-4 ">
+          <h2 className="icon_label center -ml-6">
+            <InfoIcon sx={{  fontSize: '50px' }}></InfoIcon>
             Somos uma cia de dança
           </h2>
-          <h2 className="icon_label">
-            <ApartmentIcon sx={{color: "#601802" }}></ApartmentIcon>
+          <h2 className="icon_label center">
+            <ApartmentIcon sx={{  fontSize: '50px' }}></ApartmentIcon>
             Empresa de pequeno porte
           </h2>
-          <h2 className="icon_label">
-            <GroupsIcon sx={{color: "#601802" }}></GroupsIcon>
-              25 integrantes (elenco fixo)
+          <h2 className="icon_label center ">
+            <GroupsIcon sx={{ fontSize: '50px' }}></GroupsIcon>
+            25 integrantes (elenco fixo)
           </h2>
-          
         </CardBody>
-
       </Card>
-      
-      <Card className="py-4 mix-blend-darken ml-60 -mt-4 bg-pessego w-[400px] h-[350px] shadow-lg shadow-marromVermelho">
-        <CardHeader className="center ">
-            <h2 className="icon_label text-xl text-center" >
-              <WhatshotIcon sx={{fontSize: '35px'}}/>
+
+      <Card className=" ml-0 rounded-lg border-8 border-pessego bg-transparent w-full lg:w-[500px] sm:w-[400px] lg:h-[350px] sm:h-[350px] shadow-lg shadow-marromVermelho">
+        <CardHeader className="center">
+          <Code className="center bg-laranjao w-full opacity-85">
+            <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginRight: '2px' }} />
+              <h2 className="icon_label !text-2xl text-center">
                 Direção
-              <WhatshotIcon sx={{fontSize: '35px'}}/>
-            </h2>
+              </h2>
+            <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginLeft: '2px' }} />
+          </Code>
         </CardHeader>
 
-        <CardBody className="justify-center gap-3 -mt-8">
+        <CardBody className=" grid grid-rows-4 grid-cols-1 ">
 
-          <Divider/>
-            <div className="center flex gap-3">
-              <Avatar radius="full"  size="md" src="/imgs/fotoPessoa.png" />
-              <div className="flex flex-col items-start justify-center">
-                <h4 className="text-md font-bold leading-none text-marrom">Juliana Mascarenhas</h4>
-              </div>
+          <div className="center mb-2">
+            <Avatar radius="full" size="md" src="/imgs/fotoPessoa.png" />
+            <div className="flex flex-col items-start justify-center ">
+              <h4 className="text-md font-bold leading-none text-marrom ml-2">Juliana Mascarenhas</h4>
             </div>
-          <Divider/>
-          <h2 className="icon_label">
-            <InfoIcon sx={{color: "#601802" }}></InfoIcon>
-              Uma das fundadoras iniciais
-          </h2>
+          </div>
 
-          <h2 className="icon_label">
-            <StarIcon sx={{color: "#601802" }}></StarIcon>
+          <h2 className="icon_label items-center -mb-5">
+            <InfoIcon sx={{ fontSize: '40px', color: "#601802" }}></InfoIcon>
+            Uma das fundadoras iniciais
+          </h2>
+          <h2 className="icon_label items-center">
+            <StarIcon sx={{ fontSize: '40px', color: "#601802" }}></StarIcon>
             Dançarina e coreógrafa
           </h2>
-
-          <h2 className="icon_label">
-            <SchoolIcon sx={{color: "#601802" }}></SchoolIcon>
-              Licenciada e Bacharel em Dança pela Universidade Federal da Bahia (UFBA).
-          </h2>
+          <div>
+            <h2 className="icon_label items-center">
+              <SchoolIcon sx={{ fontSize: '40px', color: "#601802" }}></SchoolIcon>
+                Licenciada e Bacharel em Dança 
+                -
+                <h2 className="text-marrom center font-bold items-center">
+                <PlaceIcon sx={{ fontSize: '20px', color: "#601802" }}></PlaceIcon>
+                UFBA
+                </h2>
+            </h2>
+            
+          </div>
           
         </CardBody>
-
       </Card>
     </div>
-  )
+  );
 }
 
 const slidesData = [
@@ -89,26 +104,14 @@ const slidesData = [
     content: ''
   },
   {
-    title: "Quem Somos",
+    title: titleQuemSomos(),
     content: quemSomos()
   },
   {
     title: "Nossa História",
     content: "A InFlame foi fundada em outubro de 2012 em Feira de Santana, Bahia, a partir de uma apresentação realizada no Colégio Padre Ovídio pelas alunas do 1º ano. A princípio, definiu-se como um grupo de dança o qual participava de eventos culturais da cidade. Em 2018, estabeleceu-se como companhia e tem como foco a realização de eventos, espetáculos, oficinas e aulas regulares de dança.",
   },
-  // {
-  //   img: "/imgs/img1.jpg",
-  //   title: "Nossa missão",
-  //   content: "Promover entretenimento e conhecimento artístico para pessoas de diversas classes, a partir de espetáculos, aulas e eventos culturais. Dando oportunidade para que jovens e adultos tenham um contato maior com a dança, encontrando meios que, além de entreter e educar, seja uma oportunidade de trabalho e crescimento a partir da arte. ",
-  // },
-  // {
-  //   img: "/imgs/img1.jpg",
-  //   title: "Nossa Visão e Valores",
-  //   content: "Ser, no segmento das artes, um referencial na atuação e função sociocultural. Diversidade, Ética, Transparência, Comprometimento, Responsabilidade, Cooperação, Respeito, Profissionalismo.",
-  // },
 ];
-
-
 
 export default function SobreNos() {
   const sliderSettings = {
@@ -117,30 +120,34 @@ export default function SobreNos() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768, // Breakpoint para dispositivos menores
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // Adicione mais breakpoints conforme necessário
+    ],
   };
 
   return (
-    <section id="section-sobreNos" className=" body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
-
-      <div className="justify-center w-[90%] h-[90%]">
-
+    <section id="section-sobreNos" className="body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
+      <div className="justify-center w-[90%] h-[80%]">
         <Slider {...sliderSettings} className="grid w-full h-full border-none">
-
-          {slidesData.map((slide, index) => ( 
-            <div key={index} id="grid" className="grid-cols-2 gap-2">
-
-              <div className="flex items-center laranjao">
-                <h1 className={title()}>{slide.title}</h1>
+          {slidesData.map((slide, index) => (
+            <div key={index} id="grid" className="grid grid-rows-3">
+              <div className="flex w-full h-full row-span-1">
+                {slide.title}
               </div>
-
-              {slide.content}
-              
+              <div className="-mt-2 w-full h-full row-span-2">
+                {slide.content}
+              </div>
             </div>
-          ))} 
-
+          ))}
         </Slider>
       </div>
-
     </section>
   );
 }

@@ -20,12 +20,24 @@
     background-size: 400%;
 }
 
+.marromVermelho{
+    background: #E5392C;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+}
+
 .icon_label{
     display: flex;
     gap: 0.50rem;
     color: #601802 ;
     font-weight: bold;
+    font-size: large;
+    text-align: center;
 }
+
+
 
 .center{
     display:flex;
@@ -38,7 +50,7 @@ input{
 }
 
 .body-with-grain-texture {
-    background: linear-gradient(45deg, #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
+    background: linear-gradient(45deg, #FFC04D , #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
      linear-gradient(45deg, #601802 25%, transparent 25%, transparent 75%, #E5392C 75%, #601802);
   }
 
