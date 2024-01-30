@@ -12,7 +12,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
-import { LogoBlack, LogoP2, LogoStudio } from "@/components/icons";
+import { LogoMarrom} from "@/components/icons";
 
 function titleQuemSomos(){
   return(
@@ -25,7 +25,7 @@ function titleQuemSomos(){
 function quemSomos() {
   return (
     <div className="flex mx-4 my-0 justify-evenly">
-      <Card className="py-4 m-0 rounded-lg border-8 border-pessego bg-transparent w-full lg:w-[500px] sm:w-[350px] h-auto lg:h-[300px] sm:h-[250px] shadow-lg shadow-marrom ">
+      <Card className="py-4 m-0 rounded-lg border-8 border-pessego border-double bg-transparent w-full lg:w-[500px] sm:w-[350px] h-auto lg:h-[300px] sm:h-[250px] shadow-lg shadow-marrom ">
         <CardHeader className="center">
           <Code className="center bg-laranjao w-full opacity-85">
             <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginRight: '2px' }} />
@@ -52,7 +52,7 @@ function quemSomos() {
         </CardBody>
       </Card>
 
-      <Card className=" ml-0 rounded-lg border-8 border-pessego bg-transparent w-full lg:w-[500px] sm:w-[400px] lg:h-[350px] sm:h-[350px] shadow-lg shadow-marromVermelho">
+      <Card className=" ml-0 rounded-lg border-8 border-pessego border-double bg-transparent w-full lg:w-[500px] sm:w-[400px] lg:h-[350px] sm:h-[350px] shadow-lg shadow-marromVermelho">
         <CardHeader className="center">
           <Code className="center bg-laranjao w-full opacity-85">
             <WhatshotIcon sx={{ fontSize: '35px', color: '#601802', marginRight: '2px' }} />
@@ -66,9 +66,9 @@ function quemSomos() {
         <CardBody className=" grid grid-rows-4 grid-cols-1 ">
 
           <div className="center mb-2">
-            <Avatar radius="full" size="md" src="/imgs/fotoPessoa.png" />
+            <Avatar radius="full" size="lg" src="/imgs/fotoPessoa.png" />
             <div className="flex flex-col items-start justify-center ">
-              <h4 className="text-md font-bold leading-none text-marrom ml-2">Juliana Mascarenhas</h4>
+              <h4 className="text-lg font-bold leading-none text-marrom ml-2">Juliana Mascarenhas</h4>
             </div>
           </div>
 
@@ -84,11 +84,11 @@ function quemSomos() {
             <h2 className="icon_label items-center">
               <SchoolIcon sx={{ fontSize: '40px', color: "#601802" }}></SchoolIcon>
                 Licenciada e Bacharel em Dança 
-                -
-                <h2 className="text-marrom center font-bold items-center">
+                 -
+                <span className="text-marrom center font-bold items-center -ml-1">
                 <PlaceIcon sx={{ fontSize: '20px', color: "#601802" }}></PlaceIcon>
                 UFBA
-                </h2>
+                </span>
             </h2>
             
           </div>
@@ -101,8 +101,56 @@ function quemSomos() {
 
 function Principal(){
   return(
-    <div className="center">
-      <LogoBlack width={'30%'} height={'30%'}></LogoBlack>
+    <div className="grid grid-rows-3 grid-cols-3 ">
+
+      <div className="w-full h-full flex justify-center row-span-2">
+        <Image
+          src='/imgs/img2.jpg'
+          alt='InFlame - Anderson Moreira Fotografia'
+          className="object-cover w-full h-full"
+          width={300}
+          height={200}
+          classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
+        />
+     </div>
+
+     <div className="flex items-center justify-self-center row-start-1  marrom">
+        <h1 className={`${title()} font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-8xl`}>A CIA</h1>
+      </div>
+
+     <div className="w-full h-full flex justify-center">
+        <Image
+          src='/imgs/img2.jpg'
+          alt='InFlame - Anderson Moreira Fotografia'
+          className="object-cover w-full h-full"
+          width={300}
+          height={200}
+          classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
+        />
+     </div>
+
+      <div className="w-full h-full mt-6 flex justify-center ">
+        <Image
+          src='/imgs/img1.jpg'
+          alt='InFlame - Anderson Moreira Fotografia'
+          className="object-cover w-full h-full"
+          width={350}
+          height={200}
+          classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
+        />
+     </div>
+
+      <div className="w-full h-full mt-6 flex justify-center ">
+        <Image
+          src='/imgs/grupo-danca2.jpg'
+          alt='InFlame - Anderson Moreira Fotografia'
+          className="object-cover w-full h-full"
+          width={350}
+          height={200}
+          classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
+        />
+     </div>
+     
     </div>
   );
 }

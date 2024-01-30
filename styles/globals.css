@@ -20,8 +20,8 @@
     background-size: 400%;
 }
 
-.marromVermelho{
-    background: #E5392C;
+.marrom{
+    background: #601802;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -52,7 +52,11 @@ input{
 .body-with-grain-texture {
     background: linear-gradient(45deg, #FFC04D , #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
      linear-gradient(45deg, #601802 25%, transparent 25%, transparent 75%, #E5392C 75%, #601802);
-  }
+}
+
+.body-principal{
+    background-image: url('/imgs/img1.jpg');
+}
 
 textarea{
     background-color: transparent;
@@ -60,4 +64,11 @@ textarea{
 
 #grid{
     display: grid !important;
+}
+
+.gradient-border {
+    border: 8px solid transparent;
+    background-image: linear-gradient(to right top, #AA2704 15%, transparent 15% 85%, #AA2704 85%);
+    background-origin: border-box;
+    background-clip: border-box;
 }

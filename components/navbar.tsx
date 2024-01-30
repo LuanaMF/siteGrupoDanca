@@ -28,7 +28,7 @@ export const Navbar  = () => {
 	const handleNavigationClick = (sectionId: string) => {
 	  setScrolling(true);
 	  setSection(sectionId);
-	  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+	  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
 	  setTimeout(() => setScrolling(false), 1000);
 	};
 
