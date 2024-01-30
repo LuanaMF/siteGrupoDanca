@@ -35,9 +35,8 @@
     font-weight: bold;
     font-size: large;
     text-align: center;
+    margin-top: 5px !important;
 }
-
-
 
 .center{
     display:flex;
@@ -71,4 +70,21 @@ textarea{
     background-image: linear-gradient(to right top, #AA2704 15%, transparent 15% 85%, #AA2704 85%);
     background-origin: border-box;
     background-clip: border-box;
+}
+
+@keyframes levitate {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Adjust the value for the desired height of levitation */
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+  
+.levitating {
+    animation: levitate 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
 }
