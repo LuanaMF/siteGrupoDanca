@@ -35,6 +35,7 @@
     font-weight: bold;
     font-size: large;
     text-align: center;
+    text-overflow: clip;
     margin-top: 5px !important;
 }
 
@@ -88,3 +89,4 @@ textarea{
 .levitating {
     animation: levitate 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
 }
+

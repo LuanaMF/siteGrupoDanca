@@ -32,9 +32,10 @@ export const LogoMarrom: React.FC<IconSvgProps> = ({
 	size = 36,
 	width,
 	height,
+	className,
 	...props
 }) => (
-	<img src="/logos/logo-marrom.png" width={width} height={height}></img>
+	<img src="/logos/logo-marrom.png" className={className} width={width} height={height}></img>
 );
 
 export const LogoCaixaPandora: React.FC<IconSvgProps> = ({

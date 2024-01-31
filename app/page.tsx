@@ -12,6 +12,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
+import { LogoMarrom } from "@/components/icons";
 
 function titleQuemSomos(){
   return(
@@ -113,88 +114,61 @@ function cardDirecao(){
 }
 
 function cardHistoria(){
+
+  const historia = `A InFlame foi fundada em outubro de 2012 em Feira de Santana, Bahia, 
+                    a partir de uma apresentação realizada no Colégio Padre Ovídio pelas alunas do 1º ano. 
+                    A princípio, definiu-se como um grupo de dança o qual participava de eventos culturais da cidade.
+                    Em 2018, estabeleceu-se como companhia e tem como foco a realização de eventos, espetáculos, 
+                    oficinas e aulas regulares de dança.`
   return(
-    <Card className=" bg-pessego levitating w-full h-full">
+    <Card  className="
+            levitating
+            border-8 border-pessego border-double 
+            shadow-lg shadow-marromVermelho"
+    >
+        <CardHeader className="center">
+          <Code className="center bg-laranjao w-full opacity-85">
+            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
+              <h2 className="icon_label !text-xl text-center">
+                Nossa História
+              </h2>
+            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
+          </Code>
+        </CardHeader>
 
-    </Card>
-  );
-}
-
-function cardMissao(){
-  return(
-    <Card className="bg-pessego levitating w-full h-full">
-
-    </Card>
-  );
-}
-
-function cardValores(){
-  return(
-    <Card isBlurred className="
-    levitating m-0 rounded-lg 
-    border-8 border-pessego border-double
-    ">
-
-      <CardHeader className='center'>
-        <h1 className='text-marrom font-bold font-mono text-xl'>Valores</h1>
-      </CardHeader>
-      <Divider></Divider>
-      <CardBody>
-        <h1 className='text-marrom font-bold font-mono text-xl'>Diversidade</h1>
-      </CardBody>
-    {/*Diversidade, ética, transparência , compromentomimento, responsabilidade, cooperação, respeito, profissionalismo*/}
-    </Card>
-  );
-}
-
-function cardVisao(){
-  return(
-    <Card className="bg-pessego levitating h-full w-full">
-        <h1>Visao</h1>
+        <CardBody className="">
+          <span className="text-balance text-marrom font-semibold ">
+            {historia}
+          </span>
+        </CardBody>
     </Card>
   );
 }
 
 function quemSomos() {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 h-auto w-auto">
+    <div className="grid grid-cols-2 grid-rows-3 h-auto w-auto" style={{gridTemplateRows: '1fr 2fr 1fr'}}>
 
-      <div className="row-span-2">
-        <div className="grid grid-rows-3 gap-4" style={{ gridTemplateRows: '1fr 2fr 2fr' }}>
-
-          <div className="h-full">  
+      <div className="col-span-2">
+          <div className="h-full ">  
               {titleQuemSomos()}
           </div>
-          <div className="w-[95%]">
-            {cardSobreNos()}
-          </div>
-          <div className=" w-[95%] h-[95%]">
-            {cardHistoria()}
-          </div>
+        
+      </div>
+      
+      <div className="w-[80%] ">
+        {cardSobreNos()}
+      </div>
 
-        </div>
+      <div className="w-[85%]">
+        {cardDirecao()}
       </div>
       
 
-      <div className="mt-4 justify-center gap-2 grid grid-rows-2 grid-cols-2" style={{ gridTemplateColumns: '2fr 1fr' }}>
-      
-        <div className="center mb-6">
-          {cardDirecao()}
-        </div>
-        
-        <div className="center ">
-          {cardValores()}
-        </div>
-        
-        <div className="center w-[80%] h-[90%]">
-          {cardMissao()}
-        </div>
-       
-        <div className="center h-[80%]">
-          {cardVisao()}
-        </div>
-      
+      <div className=" w-[80%] col-span-2">
+        {cardHistoria()}
       </div>
+
     </div>
 
   );
@@ -216,7 +190,7 @@ function Principal(){
      </div>
 
      <div className="flex items-center justify-self-center row-start-1  marrom">
-        <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-8xl`}>A CIA</h1>
+        <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-9xl`}>A CIA</h1>
       </div>
 
      <div className="w-full h-full flex justify-center">
@@ -260,7 +234,6 @@ export default function SobreNos() {
 
   const sliderSettings = {
     dots: true,
-    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -278,14 +251,19 @@ export default function SobreNos() {
 
   return (
     <section id="section-sobreNos" className="body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
-      <div className="justify-center w-[90%] h-[80%]">
-        <Slider {...sliderSettings} className="grid w-full h-full border-none">
-        
+      <div className="w-[95%] h-[90%]">
+        <Slider {...sliderSettings} className="mt-8 grid w-full h-full">
+
           <div key={1}>
-            {Principal()}
+            <div id="grid" className="" >
+              {Principal()}
+            </div>
           </div>
-          <div key={2}>
-            {quemSomos()}
+          
+          <div className="mx-4" key={2}>
+            <div id="grid" className="" >
+              {quemSomos()}
+            </div>
           </div>
            
         </Slider>
