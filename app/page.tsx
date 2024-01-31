@@ -15,7 +15,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 
 function titleQuemSomos(){
   return(
-    <div className=" h-full marrom">
+    <div className="marrom">
       <h1 className={`${title()} tracking-wide font-serif row-span-1 justify-self-start sm:text-6xl md:text-5xl lg:text-8xl`}>Quem somos</h1>
     </div>    
   );
@@ -24,11 +24,10 @@ function titleQuemSomos(){
 function cardSobreNos(){
   return(
     <Card 
-      
+    
       className="
       levitating m-0 rounded-lg 
       border-8 border-pessego border-double
-      h-auto 
       shadow-lg shadow-marrom" >
         
         <CardHeader className="center">
@@ -71,7 +70,7 @@ function cardDirecao(){
         <CardHeader className="center">
           <Code className="center bg-laranjao w-full opacity-85">
             <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
-              <h2 className="icon_label !text-2xl text-center">
+              <h2 className="icon_label !text-xl text-center">
                 Direção
               </h2>
             <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
@@ -131,54 +130,71 @@ function cardMissao(){
 
 function cardValores(){
   return(
-    <Card className="bg-pessego levitating w-full h-full">
+    <Card isBlurred className="
+    levitating m-0 rounded-lg 
+    border-8 border-pessego border-double
+    ">
 
+      <CardHeader className='center'>
+        <h1 className='text-marrom font-bold font-mono text-xl'>Valores</h1>
+      </CardHeader>
+      <Divider></Divider>
+      <CardBody>
+        <h1 className='text-marrom font-bold font-mono text-xl'>Diversidade</h1>
+      </CardBody>
+    {/*Diversidade, ética, transparência , compromentomimento, responsabilidade, cooperação, respeito, profissionalismo*/}
     </Card>
   );
 }
 
 function cardVisao(){
   return(
-    <Card className="bg-pessego levitating">
-
+    <Card className="bg-pessego levitating h-full w-full">
+        <h1>Visao</h1>
     </Card>
   );
 }
 
 function quemSomos() {
   return (
-    <div className="grid grid-rows-3 grid-cols-4 gap-6" style={{ gridTemplateColumns: '2fr 2fr 1fr 1fr', gridTemplateRows: '1fr 2fr 1fr' }}>
+    <div className="grid grid-cols-2 grid-rows-2 h-auto w-auto">
 
-      
-      <div className=" col-span-2">
-        {titleQuemSomos()}
+      <div className="row-span-2">
+        <div className="grid grid-rows-3 gap-4" style={{ gridTemplateRows: '1fr 2fr 2fr' }}>
+
+          <div className="h-full">  
+              {titleQuemSomos()}
+          </div>
+          <div className="w-[95%]">
+            {cardSobreNos()}
+          </div>
+          <div className=" w-[95%] h-[95%]">
+            {cardHistoria()}
+          </div>
+
+        </div>
       </div>
-
       
-      <div className="mt-8 row-span-3 col-span-2">
-        {cardHistoria()}
-      </div>
 
+      <div className="mt-4 justify-center gap-2 grid grid-rows-2 grid-cols-2" style={{ gridTemplateColumns: '2fr 1fr' }}>
       
-      <div className="-mt-2 w-[80%]">
-        {cardSobreNos()}
-      </div>
-
+        <div className="center mb-6">
+          {cardDirecao()}
+        </div>
+        
+        <div className="center ">
+          {cardValores()}
+        </div>
+        
+        <div className="center w-[80%] h-[90%]">
+          {cardMissao()}
+        </div>
+       
+        <div className="center h-[80%]">
+          {cardVisao()}
+        </div>
       
-      <div className="-ml-10 -mt-4">
-        {cardDirecao()}
       </div>
-
-      
-      <div className="-mt-4 w-[90%]">
-        {cardValores()}
-      </div>
-
-      
-      <div className="">
-        {cardMissao()}
-      </div>
-
     </div>
 
   );
