@@ -155,8 +155,8 @@ function cardHistoria(){
 
         <CardBody className="gap-3 items-center">
 
-          {historia.map((valor)=> (
-            <h2 className="text-md font-bold text-marrom  indent-3 ">
+          {historia.map((valor, index)=> (
+            <h2 key={index} className="text-md font-bold text-marrom  indent-3 ">
               <InfoIcon sx={{ fontSize: '20px', color: "#601802", marginRight: '2px' }}></InfoIcon>
               {valor}
             </h2>
@@ -273,7 +273,7 @@ export default function SobreNos() {
   };
 
   return (
-    <section id="section-sobreNos" className="body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
+    <section key={1} id="section-sobreNos" className="body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
       <div className="w-[95%] h-[90%]">
         <Slider {...sliderSettings} className="mt-8 grid w-full h-full">
 

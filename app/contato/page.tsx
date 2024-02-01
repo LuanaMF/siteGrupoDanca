@@ -31,7 +31,7 @@ export default function Contato() {
 	const handler = async () => {
 		if(verificacao()){
 			try {
-				const response = await fetch('/api/email', {
+				const response = await fetch('/api', {
 				  method: 'POST',
 				  headers: {
 					'Content-Type': 'application/json',
