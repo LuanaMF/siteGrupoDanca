@@ -115,13 +115,30 @@ function cardDirecao(){
 
 function cardHistoria(){
 
-  const historia = `A InFlame foi fundada em outubro de 2012 em Feira de Santana, Bahia, 
-                    a partir de uma apresentação realizada no Colégio Padre Ovídio pelas alunas do 1º ano. 
-                    A princípio, definiu-se como um grupo de dança o qual participava de eventos culturais da cidade.
-                    Em 2018, estabeleceu-se como companhia e tem como foco a realização de eventos, espetáculos, 
-                    oficinas e aulas regulares de dança.`
+  //Historia
+  const historia = [
+    'Fundada em OUT/2012 - Feira de Santana, BA',
+    'Surgiu a partir de uma apresentação realizada no Colégio Padre Ovídio pelas alunas do 1º ano.',
+    'A princípio, definiu-se como um grupo de dança o qual participava de eventos culturais da cidade',
+    'Em 2018, estabeleceu-se como companhia e tem como foco a realização de eventos, espetáculos, oficinas e aulas regulares de dança.'
+  ]
+ 
+  //Valores
+  const valores = [
+    'Diversidade',
+    'Ética',
+    'Transparência',
+    'Comprometimento',
+    'Responsabilidade',
+    'Cooperação',
+    'Respeito',
+    'Profissionalismo'
+  ]
+
   return(
+
     <Card  className="
+            h-[500px]
             levitating
             border-8 border-pessego border-double 
             shadow-lg shadow-marromVermelho"
@@ -136,10 +153,16 @@ function cardHistoria(){
           </Code>
         </CardHeader>
 
-        <CardBody className="">
-          <span className="text-balance text-marrom font-semibold ">
-            {historia}
-          </span>
+        <CardBody className="gap-3 items-center">
+
+          {historia.map((valor)=> (
+            <h2 className="text-md font-bold text-marrom  indent-3 ">
+              <InfoIcon sx={{ fontSize: '20px', color: "#601802", marginRight: '2px' }}></InfoIcon>
+              {valor}
+            </h2>
+          ))}
+          
+          
         </CardBody>
     </Card>
   );
@@ -147,27 +170,27 @@ function cardHistoria(){
 
 function quemSomos() {
   return (
-    <div className="grid grid-cols-2 grid-rows-3 h-auto w-auto" style={{gridTemplateRows: '1fr 2fr 1fr'}}>
+    <div className="grid grid-cols-4 grid-rows-2 justify-center items-center" 
+    style={{gridTemplateRows: '1fr 2fr', gridTemplateColumns: '2fr 2fr 1fr 1fr'}}>
 
       <div className="col-span-2">
-          <div className="h-full ">  
+          <div className="h-full">  
               {titleQuemSomos()}
           </div>
         
       </div>
       
-      <div className="w-[80%] ">
+      <div className="w-[80%] mt-8 col-span-2 row-span-2">
+        {cardHistoria()}
+      </div>
+
+      <div className="">
         {cardSobreNos()}
       </div>
 
-      <div className="w-[85%]">
+      <div className=" center">
         {cardDirecao()}
-      </div>
-      
-
-      <div className=" w-[80%] col-span-2">
-        {cardHistoria()}
-      </div>
+      </div>  
 
     </div>
 
@@ -260,8 +283,8 @@ export default function SobreNos() {
             </div>
           </div>
           
-          <div className="mx-4" key={2}>
-            <div id="grid" className="" >
+          <div className="mx-4 h-full" key={2}>
+            <div className="h-full" >
               {quemSomos()}
             </div>
           </div>
