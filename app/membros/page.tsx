@@ -11,7 +11,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { title } from "@/components/primitives";
-import { LogoMarrom } from "@/components/icons";
+import { Logo, LogoMarrom } from "@/components/icons";
 
 
 const calcularIdade = (dataNascimento: any) => {
@@ -145,12 +145,11 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center mt-4 h-screen w-screen overflow-hidden">
+			className="bg-cover mix-blend-multiply  flex flex-col items-center justify-center mt-4 h-screen w-screen overflow-hidden">
 				<div className="grid grid-cols-2"  style={{ gridTemplateColumns: '1fr 2fr'}}>
 
-					<div className='flex-col center -mt-4 vinho-marrom'>
-						<LogoMarrom width={300} height={300}></LogoMarrom>
-						<h1 className={title({size: 'sm'})}>Membros</h1>
+					<div className='flex-col center -mt-4 laranjao'>
+						<h1 className={title({size: 'lg'})}>Membros</h1>
 					</div>
 					
 					<div className="p-4">
@@ -162,9 +161,10 @@ export default function Membros() {
 									
 									return(
 										<Card
+										key={index}
 										isFooterBlurred
 										radius="lg"
-										className=" shadow-marrom shadow-lg"
+										className=" shadow-marrom shadow-xl"
 										classNames={{base: 'gradient-border'}}
 									  >
 										<Image
@@ -188,9 +188,10 @@ export default function Membros() {
 							<div id="grid" className="grid grid-cols-4 grid-rows-2 gap-4 px-4 py-4" key={2}>
 								{teste.map((membro: any, index: any) =>  (
 									<Card
+									key={index}
 									isFooterBlurred
 									radius="lg"
-									className=" shadow-marrom shadow-lg"
+									className=" shadow-marrom shadow-xl"
 									classNames={{base: 'gradient-border'}}
 								  >
 									<Image

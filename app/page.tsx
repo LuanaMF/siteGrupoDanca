@@ -15,7 +15,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 
 function titleQuemSomos(){
   return(
-    <div className="marrom">
+    <div className="laranjao">
       <h1 className={`${title()} tracking-wide font-serif row-span-1 justify-self-start sm:text-6xl md:text-5xl lg:text-8xl`}>Quem somos</h1>
     </div>    
   );
@@ -210,7 +210,7 @@ function Principal(){
         />
       </div>
 
-      <div className="flex items-center justify-self-center row-start-1 marrom">
+      <div className="flex items-center justify-self-center row-start-1 laranjao">
         <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-8xl`}>A CIA</h1>
       </div>
 

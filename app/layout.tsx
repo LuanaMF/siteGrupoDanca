@@ -68,7 +68,6 @@ export default function RootLayout({
             <motion.main className="body-with-grain-texture bg-cover mix-blend-multiply flex-grow overflow-y-scroll w-fit h-screen">
             {/* bg-[url('/imgs/fundo-vermelho-blur.png')] */}
               <motion.div
-             
                 ref={refSobreNos}
                 initial="hidden"
                 animate={inViewSobreNos ? "visible" : "hidden"}

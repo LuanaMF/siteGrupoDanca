@@ -11,13 +11,15 @@
     -webkit-text-fill-color: transparent;
     background-size: 400%;
 }
-
-.laranjao{
-    background: #FE800A;
+.laranjao {
+    color: transparent; /* Torna o texto transparente */
+    -webkit-text-stroke: 4px #8B0000; /* Adiciona a borda ao redor do texto */
+    background: #FFC04D;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
+    
 }
 
 .marrom{
@@ -59,9 +61,12 @@ input{
 
 .body-with-grain-texture {
     background: linear-gradient(45deg, #FFC04D , #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
+        url('/imgs/ink-splash.png'),
      linear-gradient(45deg, #601802 25%, transparent 25%, transparent 75%, #E5392C 75%, #601802);
+     background-size: contain;
 }
 
+    
 .body-principal{
     background-image: url('/imgs/img1.jpg');
 }
