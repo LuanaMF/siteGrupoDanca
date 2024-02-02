@@ -26,6 +26,14 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
+    
+}
+.vinho-marrom {
+    background: linear-gradient(45deg, #8B0000, #601802);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
 }
 
 .icon_label{

@@ -12,7 +12,6 @@ import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
-import { LogoMarrom } from "@/components/icons";
 
 function titleQuemSomos(){
   return(
@@ -162,7 +161,6 @@ function cardHistoria(){
             </h2>
           ))}
           
-          
         </CardBody>
     </Card>
   );
@@ -210,10 +208,10 @@ function Principal(){
           height={200}
           classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
         />
-     </div>
+      </div>
 
-     <div className="flex items-center justify-self-center row-start-1  marrom">
-        <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-9xl`}>A CIA</h1>
+      <div className="flex items-center justify-self-center row-start-1 marrom">
+        <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-8xl`}>A CIA</h1>
       </div>
 
      <div className="w-full h-full flex justify-center">
@@ -256,7 +254,7 @@ function Principal(){
 export default function SobreNos() {
 
   const sliderSettings = {
-    dots: true,
+    dots: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -273,8 +271,8 @@ export default function SobreNos() {
   };
 
   return (
-    <section key={1} id="section-sobreNos" className="body-with-grain-texture bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen overflow-hidden">
-      <div className="w-[95%] h-[90%]">
+    <section key={1} id="section-sobreNos" className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen overflow-hidden">
+      <div className="w-[95%] h-[90%] " >
         <Slider {...sliderSettings} className="mt-8 grid w-full h-full">
 
           <div key={1}>

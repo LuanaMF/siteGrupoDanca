@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { title } from "@/components/primitives";
+import { LogoMarrom } from "@/components/icons";
 
 
 const calcularIdade = (dataNascimento: any) => {
@@ -48,8 +50,22 @@ const dataNasc: any = {
 
 
 function identificacao(membro: any){
-	// Seu código aqui
-	const nome = membro.__EMPTY_3;
+	
+	let nome = membro.__EMPTY_3;
+
+	if (nome.length > 15) {
+		// Dividir o nome em partes usando espaços em branco como delimitador
+		const partesDoNome = nome.split(' ');
+	
+		// Manter o primeiro nome
+		const primeiroNome = partesDoNome[0];
+	
+		// Manter a inicial do sobrenome (se existir)
+		const sobrenome = partesDoNome.length > 1 ? partesDoNome[partesDoNome.length - 1][0] : '';
+	
+		// Criar o nome abreviado
+		nome = `${primeiroNome} ${sobrenome ? sobrenome : ''}`;
+  	}	
 	const dataStr = membro.__EMPTY_4.toString();
 	let idade = dataStr.includes('/') ? calcularIdade(dataStr) : '';
 	
@@ -58,7 +74,7 @@ function identificacao(membro: any){
 		idade = calcularIdade(data);
 	}
 	return (
-		<b className="text-white">
+		<b className="text-marromVermelho">
 		{nome +', ' + idade}
 		</b> // Função de exemplo
 	);
@@ -101,7 +117,7 @@ export default function Membros() {
 	});
 
 	useEffect(() => {
-		const dançarina = membros.filter((membro: { __EMPTY_6: string; }) => membro.__EMPTY_6 == 'Dançarina');
+		const dançarina = membros.filter((membro: { __EMPTY_6: string; }) => membro.__EMPTY_6 == 'Dançarina' || membro.__EMPTY_6 == 'Dançarino' || membro.__EMPTY_6 == 'Direção');
 		const faseDeTeste = membros.filter((membro: { __EMPTY_6: string; }) => membro.__EMPTY_6 == 'Fase de Teste');
 		setDançarinas(dançarina)
 		setTeste(faseDeTeste); 
@@ -109,10 +125,11 @@ export default function Membros() {
 	
 
 	const sliderSettings = {
-		dots: true,
+		dots: false,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		adaptiveHeight: true,
 		responsive: [
 		  {
 			breakpoint: 768, // Breakpoint para dispositivos menores
@@ -127,63 +144,67 @@ export default function Membros() {
 	
 	return (
 		<>
-			<section id="section-membros" className="flex flex-col items-center justify-center ">
-				<div className="grid grid-cols-2">
+			<section id="section-membros" 
+			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center mt-4 h-screen w-screen overflow-hidden">
+				<div className="grid grid-cols-2"  style={{ gridTemplateColumns: '1fr 2fr'}}>
 
-					<div>
-						<h1>Membros</h1>
+					<div className='flex-col center -mt-4 vinho-marrom'>
+						<LogoMarrom width={300} height={300}></LogoMarrom>
+						<h1 className={title({size: 'sm'})}>Membros</h1>
 					</div>
 					
-					<div>
-						<Slider {...sliderSettings} className="mt-8 grid h-full w-[50%]">
- 
-							<div key={1}>
-								
-								{dançarinas.map((membro: any, index: any) =>  (
-									<Card isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px] shadow-lg shadow-marromVermelho">
-										<CardHeader className="text-small justify-between">
-											<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{membro.__EMPTY_6}</Code>
-										</CardHeader>
-										<CardBody className=" p-0">
-											<Image 
-											isZoomed
-											width="100%"
-											alt={membro[2]}
-											className="w-full object-cover h-[140px]"
-											src="/imgs/fotoPessoa.png"
-											/>
-										</CardBody>
-										<CardFooter className="justify-between mr-[10px] bg-pessego">
+					<div className="p-4">
+						<Slider {...sliderSettings} className=" mt-8 grid h-fit w-[90%]">
 
-											{identificacao(membro)}
-											
-										</CardFooter>	
-									</Card>
-								))}
+							<div key={1} id="grid" 	className="grid grid-cols-4 grid-rows-3 gap-4 px-4 py-4">
+								
+								{dançarinas.map((membro: any, index: any) =>  {
+									
+									return(
+										<Card
+										isFooterBlurred
+										radius="lg"
+										className=" shadow-marrom shadow-lg"
+										classNames={{base: 'gradient-border'}}
+									  >
+										<Image
+										  alt={membro.__EMPTY_3}
+										  className="object-cover border-8 border-pessego border-double"
+										  height={200}
+										  src="/imgs/fotoPessoa.png"
+										  width={200}
+										/>
+										<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+										  {identificacao(membro)}
+										  
+										</CardFooter>
+									  </Card>
+									)
+									
+								})}
 								
 							</div>
 
-							<div className="" key={2}>
+							<div id="grid" className="grid grid-cols-4 grid-rows-2 gap-4 px-4 py-4" key={2}>
 								{teste.map((membro: any, index: any) =>  (
-									<Card isHoverable isBlurred key={index} className="bg-cover bg-bottom min-w-[150px] shadow-lg shadow-marromVermelho">
-										<CardHeader className="text-small justify-between">
-											<Code className="flex justify-center w-[100%] bg-laranjao font-bold text-white">{membro.__EMPTY_6}</Code>
-										</CardHeader>
-										<CardBody className=" p-0">
-											<Image 
-											isZoomed
-											width="100%"
-											alt={membro[2]}
-											className="w-full object-cover h-[140px]"
-											src="/imgs/fotoPessoa.png"
-											/>
-										</CardBody>
-										<CardFooter className="justify-between mr-[10px] bg-pessego">
-
-											{identificacao(membro)}
-											
-										</CardFooter>	
-									</Card>
+									<Card
+									isFooterBlurred
+									radius="lg"
+									className=" shadow-marrom shadow-lg"
+									classNames={{base: 'gradient-border'}}
+								  >
+									<Image
+									  alt={membro.__EMPTY_3}
+									  className="object-cover border-8 border-pessego border-double"
+									  height={200}
+									  src="/imgs/fotoPessoa.png"
+									  width={200}
+									/>
+									<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+									  {identificacao(membro)}
+									  
+									</CardFooter>
+								  </Card>
 								))}
 							</div>
 							

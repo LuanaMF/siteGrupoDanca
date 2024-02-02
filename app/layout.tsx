@@ -65,7 +65,7 @@ export default function RootLayout({
           themeProps={{ attribute: "class", defaultTheme: "light", forcedTheme: "light" }}
         >
           <div className="relative flex flex-col h-screen overflow-hidden">
-            <motion.main className="flex-grow   bg-cover overflow-y-scroll w-screen h-screen">
+            <motion.main className="body-with-grain-texture bg-cover mix-blend-multiply flex-grow overflow-y-scroll w-fit h-screen">
             {/* bg-[url('/imgs/fundo-vermelho-blur.png')] */}
               <motion.div
              
