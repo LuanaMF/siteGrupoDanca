@@ -15,8 +15,8 @@ import PlaceIcon from '@mui/icons-material/Place';
 
 function titleQuemSomos(){
   return(
-    <div className="laranjao">
-      <h1 className={`${title()} tracking-wide font-serif row-span-1 justify-self-start sm:text-6xl md:text-5xl lg:text-8xl`}>Quem somos</h1>
+    <div className="center laranjao">
+      <h1 id="title-quem-somos" className={`${title()} tracking-wide font-serif row-span-1 justify-self-start`}>Quem somos</h1>
     </div>    
   );
 }
@@ -168,7 +168,7 @@ function cardHistoria(){
 
 function quemSomos() {
   return (
-    <div className="grid grid-cols-4 grid-rows-2 justify-center items-center" 
+    <div id="div-quem-somos" className="grid grid-cols-4 grid-rows-2 justify-center items-center" 
     style={{gridTemplateRows: '1fr 2fr', gridTemplateColumns: '2fr 2fr 1fr 1fr'}}>
 
       <div className="col-span-2">
@@ -178,7 +178,7 @@ function quemSomos() {
         
       </div>
       
-      <div className="w-[80%] mt-8 col-span-2 row-span-2">
+      <div className="w-[80%]  mt-8 col-span-2 row-span-2">
         {cardHistoria()}
       </div>
 
@@ -197,7 +197,7 @@ function quemSomos() {
 
 function Principal(){
   return(
-    <div className="grid grid-rows-3 grid-cols-3">
+    <div id="divPrincipal" className="grid grid-rows-3 grid-cols-3">
 
       <div className="w-full h-full flex justify-center row-span-2">
         <Image
@@ -211,7 +211,7 @@ function Principal(){
       </div>
 
       <div className="flex items-center justify-self-center row-start-1 laranjao">
-        <h1 className={`${title()} tracking-widest font-serif row-span-1 sm:text-6xl md:text-5xl lg:text-8xl`}>A CIA</h1>
+        <h1 id="title-cia" className={`${title()} tracking-widest font-serif row-span-1`}>A CIA</h1>
       </div>
 
      <div className="w-full h-full flex justify-center">
@@ -272,16 +272,16 @@ export default function SobreNos() {
 
   return (
     <section key={1} id="section-sobreNos" className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen overflow-hidden">
-      <div className="w-[95%] h-[90%] " >
-        <Slider {...sliderSettings} className="mt-8 grid w-full h-full">
+      <div id="slider-sobreNos" className="w-[95%] h-[90%] p-4" >
+        <Slider {...sliderSettings} className="mt-2 grid w-full h-full">
 
           <div key={1}>
-            <div id="grid" className="" >
+            <div id="slide-principal" className="" >
               {Principal()}
             </div>
           </div>
           
-          <div className="mx-4 h-full" key={2}>
+          <div id="slide-quemSomos" className="h-full" key={2}>
             <div className="h-full" >
               {quemSomos()}
             </div>

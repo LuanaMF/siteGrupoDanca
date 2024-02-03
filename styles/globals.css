@@ -14,7 +14,7 @@
 .laranjao {
     color: transparent; /* Torna o texto transparente */
     -webkit-text-stroke: 4px #8B0000; /* Adiciona a borda ao redor do texto */
-    background: #FFC04D;
+    background: #8B0000;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -61,7 +61,7 @@ input{
 
 .body-with-grain-texture {
     background: linear-gradient(45deg, #FFC04D , #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
-        url('/imgs/ink-splash.png'),
+        /* url('/imgs/ink-splash.png'), */
      linear-gradient(45deg, #601802 25%, transparent 25%, transparent 75%, #E5392C 75%, #601802);
      background-size: contain;
 }
@@ -103,3 +103,79 @@ textarea{
     animation: levitate 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
 }
 
+/* Estilos específicos para pantallas más pequeñas (menos de 600px de ancho) */
+@media screen and (max-width: 600px) {
+    #title-cia {
+      font-size: 60px !important;
+      margin: 15px;
+      
+    }
+    #slide-quemSomos{
+        margin-right: 16px;
+    }
+
+    #title-quem-somos{
+        display: flex;
+        font-size: 60px;
+        justify-content: center;
+        justify-items: center;
+    }
+  
+}
+
+@media screen and (max-width: 979px){
+    #divPrincipal{
+        display: grid !important;
+        gap: 15px;
+    }
+    #slide-quemSomos{
+        margin: 10px;
+    }
+}
+
+/* Estilos específicos para pantallas más pequeñas (menos de 600px de ancho) */
+@media screen and (min-width: 601px) and (max-width: 979px) {
+    #title-cia {
+      font-size: 75px !important;
+      margin: 15px;
+    }
+    
+    #title-quem-somos{
+        font-size: 70px;
+    }
+  
+}
+  
+  /* Estilos específicos para pantallas medianas (entre 601px y 900px de ancho) */
+  @media screen and (min-width: 980px) and (max-width: 1099px) {
+    #title-cia {
+      font-size: 80px;
+    }
+     
+    #title-quem-somos{
+        font-size: 90px;
+    }
+
+    #slide-quemSomos{
+        margin: 10px;
+    }
+  }
+  
+  /* Estilos específicos para pantallas más grandes (más de 900px de ancho) */
+  @media screen and (min-width: 1100px) {
+
+    #title-cia {
+      font-size: 100px;
+    }
+
+    #title-quem-somos{
+      font-size: 100px;
+    }
+
+    #slide-quemSomos{
+        margin: 15px;
+    }
+  
+    /* Otros estilos específicos para pantallas más grandes */
+}
+  
