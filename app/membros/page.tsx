@@ -161,7 +161,7 @@ export default function Membros() {
 						<Slider {...sliderSettings} className=" grid h-fit w-[90%]">
 
 							<div key={1} id="grid-row" 	className="grid grid-cols-4 grid-rows-4 gap-4 px-4 py-4" style={{gridTemplateRows: '1fr 2fr 2fr 2fr'}}>
-								<Code className="col-span-4 center bg-marrom text-pessego2 text-lg">
+								<Code className="col-span-4 center bg-marrom text-pessego2 text-2xl">
 									Dançarinos
 								</Code>
 								
@@ -192,7 +192,7 @@ export default function Membros() {
 							</div>
 
 							<div id="grid-row" className="grid grid-cols-4 grid-rows-4 gap-6 px-4 py-4" key={2}>
-								<Code className="col-span-4 center bg-marrom text-pessego2 text-lg">
+								<Code className="col-span-4 center bg-marrom text-pessego2 text-2xl">
 									Fase de testes
 								</Code>
 								{teste.map((membro: any, index: any) =>  (
