@@ -153,15 +153,15 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen ">
+			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen overflow-hidden">
 
-				<div id="div-membros" className=""  style={{ gridTemplateColumns: '1fr 2fr'}}>
+				<div id="div-membros">
 
 					<div className="p-4 center">
 						<Slider {...sliderSettings} className=" grid h-fit w-[90%]">
 
-							<div key={1} id="grid-row" 	className="grid grid-cols-4 grid-rows-4 gap-4 px-4 py-4" style={{gridTemplateRows: '1fr 2fr 2fr 2fr'}}>
-								<Code className="col-span-4 center bg-marrom text-pessego2 text-2xl">
+							<div key={1} id="grid-row" 	className="grid gap-4 px-4 py-4">
+								<Code id="membros-desc" className="center bg-marrom text-pessego2 text-2xl">
 									Dançarinos
 								</Code>
 								
@@ -172,7 +172,7 @@ export default function Membros() {
 										key={index}
 										isFooterBlurred
 										radius="lg"
-										className="shadow-marrom shadow-lg"
+										className="shadow-marrom shadow-lg min-w-500px"
 										classNames={{base: 'gradient-border', body: 'center'}}
 									  >
 										<Image
@@ -191,8 +191,8 @@ export default function Membros() {
 								
 							</div>
 
-							<div id="grid-row" className="grid grid-cols-4 grid-rows-4 gap-6 px-4 py-4" key={2}>
-								<Code className="col-span-4 center bg-marrom text-pessego2 text-2xl">
+							<div id="grid-row" className="grid gap-6 px-4 py-4" key={2}>
+								<Code id="membros-desc" className="center bg-marrom text-pessego2 text-2xl">
 									Fase de testes
 								</Code>
 								{teste.map((membro: any, index: any) =>  (

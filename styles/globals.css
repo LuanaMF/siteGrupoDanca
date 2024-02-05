@@ -79,10 +79,6 @@ textarea{
     display: grid !important;
 }
 
-#grid-row{
-    display: grid !important;
-    grid-template-rows: 0.5fr 2fr 2fr 2fr;
-}
 
 .gradient-border {
     border: 8px solid transparent;
@@ -125,6 +121,14 @@ textarea{
         justify-content: center;
         justify-items: center;
     }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: repeat(6, 2fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 2 / span 2;
+    }
   
 }
 
@@ -136,6 +140,15 @@ textarea{
     #slide-quemSomos{
         margin: 10px;
     }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: repeat(6, 2fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 2 / span 2;
+    }
+
 }
 
 /* Estilos específicos para pantallas más pequeñas (menos de 600px de ancho) */
@@ -148,6 +161,7 @@ textarea{
     #title-quem-somos{
         font-size: 70px;
     }
+  
   
 }
   
@@ -164,6 +178,15 @@ textarea{
     #slide-quemSomos{
         margin: 10px;
     }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: 0.5fr 2fr 2fr 2fr !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 4 / span 4;
+    }
+  
   }
   
   /* Estilos específicos para pantallas más grandes (más de 900px de ancho) */
@@ -184,6 +207,16 @@ textarea{
     #div-membros{
         height: 80%;
     }
+
+    #grid-row {
+        display: grid !important;
+        columns: 4;
+        grid-template-rows: 0.5fr 2fr 2fr 2fr !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 4 / span 4;
+    }
   
 }
-  
+
