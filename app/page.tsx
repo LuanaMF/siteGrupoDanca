@@ -210,8 +210,8 @@ function Principal(){
         />
       </div>
 
-      <div className="flex items-center justify-self-center row-start-1 laranjao">
-        <h1 id="title-cia" className={`${title()} tracking-widest font-serif row-span-1`}>A CIA</h1>
+      <div id='div-title-cia' className="flex items-center justify-self-center row-start-1 laranjao">
+        <h1 id="title-cia" className={`${title()} tracking-widest font-serif`}>A CIA</h1>
       </div>
 
      <div className="w-full h-full flex justify-center">
