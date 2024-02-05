@@ -10,8 +10,8 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { title } from "@/components/primitives";
-import { Logo, LogoMarrom } from "@/components/icons";
+import { title as title_css }  from "@/components/primitives";
+import GroupsIcon from '@mui/icons-material/Groups';
 
 
 const calcularIdade = (dataNascimento: any) => {
@@ -88,6 +88,7 @@ export default function Membros() {
 	const [dançarinas, setDançarinas] = useState([]);
 	const [teste, setTeste] = useState([]);
 
+	const [title, setTitle] = useState('');
 
 	useEffect(() => {
 		const handler = async () => {
@@ -130,6 +131,13 @@ export default function Membros() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		adaptiveHeight: true,
+		afterChange: (current: any) =>  setTitle(() => {
+			if (current === 0) {
+				return 'Dançarinos';
+			} else {
+				return 'Fase teste';
+			}
+		}),
 		responsive: [
 		  {
 			breakpoint: 768, // Breakpoint para dispositivos menores
@@ -145,17 +153,17 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover mix-blend-multiply  flex flex-col items-center justify-center mt-4 h-screen w-screen overflow-hidden">
-				<div className="grid grid-cols-2"  style={{ gridTemplateColumns: '1fr 2fr'}}>
+			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen ">
 
-					<div className='flex-col center -mt-4 laranjao'>
-						<h1 className={title({size: 'lg'})}>Membros</h1>
-					</div>
-					
-					<div className="p-4">
-						<Slider {...sliderSettings} className=" mt-8 grid h-fit w-[90%]">
+				<div id="div-membros" className=""  style={{ gridTemplateColumns: '1fr 2fr'}}>
 
-							<div key={1} id="grid" 	className="grid grid-cols-4 grid-rows-3 gap-4 px-4 py-4">
+					<div className="p-4 center">
+						<Slider {...sliderSettings} className=" grid h-fit w-[90%]">
+
+							<div key={1} id="grid-row" 	className="grid grid-cols-4 grid-rows-4 gap-4 px-4 py-4" style={{gridTemplateRows: '1fr 2fr 2fr 2fr'}}>
+								<Code className="col-span-4 center bg-marrom text-pessego2 text-lg">
+									Dançarinos
+								</Code>
 								
 								{dançarinas.map((membro: any, index: any) =>  {
 									
@@ -164,15 +172,13 @@ export default function Membros() {
 										key={index}
 										isFooterBlurred
 										radius="lg"
-										className=" shadow-marrom shadow-xl"
-										classNames={{base: 'gradient-border'}}
+										className="shadow-marrom shadow-lg"
+										classNames={{base: 'gradient-border', body: 'center'}}
 									  >
 										<Image
 										  alt={membro.__EMPTY_3}
 										  className="object-cover border-8 border-pessego border-double"
-										  height={200}
 										  src="/imgs/fotoPessoa.png"
-										  width={200}
 										/>
 										<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
 										  {identificacao(membro)}
@@ -185,21 +191,22 @@ export default function Membros() {
 								
 							</div>
 
-							<div id="grid" className="grid grid-cols-4 grid-rows-2 gap-4 px-4 py-4" key={2}>
+							<div id="grid-row" className="grid grid-cols-4 grid-rows-4 gap-6 px-4 py-4" key={2}>
+								<Code className="col-span-4 center bg-marrom text-pessego2 text-lg">
+									Fase de testes
+								</Code>
 								{teste.map((membro: any, index: any) =>  (
 									<Card
 									key={index}
 									isFooterBlurred
 									radius="lg"
-									className=" shadow-marrom shadow-xl"
-									classNames={{base: 'gradient-border'}}
+									className=" shadow-marrom shadow-lg"
+									classNames={{base: 'gradient-border', body: 'center'}}
 								  >
 									<Image
 									  alt={membro.__EMPTY_3}
 									  className="object-cover border-8 border-pessego border-double"
-									  height={200}
 									  src="/imgs/fotoPessoa.png"
-									  width={200}
 									/>
 									<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
 									  {identificacao(membro)}
