@@ -123,7 +123,7 @@ textarea{
     }
     #grid-row {
         display: grid !important;
-        grid-template-rows: repeat(6, 2fr) !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr !important;
         grid-template-columns: repeat(2, 1fr) !important;
     }
     #membros-desc{
@@ -142,7 +142,7 @@ textarea{
     }
     #grid-row {
         display: grid !important;
-        grid-template-rows: repeat(6, 2fr) !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr !important;
         grid-template-columns: repeat(2, 1fr) !important;
     }
     #membros-desc{
@@ -180,7 +180,7 @@ textarea{
     }
     #grid-row {
         display: grid !important;
-        grid-template-rows: 0.5fr 2fr 2fr 2fr !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr !important;
         grid-template-columns: repeat(4, 1fr) !important;
     }
     #membros-desc{
@@ -210,8 +210,7 @@ textarea{
 
     #grid-row {
         display: grid !important;
-        columns: 4;
-        grid-template-rows: 0.5fr 2fr 2fr 2fr !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr !important;
         grid-template-columns: repeat(4, 1fr) !important;
     }
     #membros-desc{

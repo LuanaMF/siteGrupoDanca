@@ -153,12 +153,12 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen overflow-hidden">
+			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-fit w-screen overflow-hidden">
 
 				<div id="div-membros">
 
 					<div className="p-4 center">
-						<Slider {...sliderSettings} className=" grid h-fit w-[90%]">
+						<Slider {...sliderSettings} className=" grid h-auto w-[90%]">
 
 							<div key={1} id="grid-row" 	className="grid gap-4 px-4 py-4">
 								<Code id="membros-desc" className="center bg-marrom text-pessego2 text-2xl">
