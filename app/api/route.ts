@@ -57,24 +57,39 @@ export async function POST(req: NextRequest) {
     }
 };
 
-export async function GET(){
+export async function GET(req: NextRequest){
+
+    const { searchParams } = new URL(req.url)
+    const page = searchParams.get('query')
+
     try {
         const caminhoDaPlanilha = path.join(process.cwd(), 'public/dados/inflame.xlsx');
         const conteudoPlanilha = readFileSync(caminhoDaPlanilha);
 
         const workbook = xlsx.read(conteudoPlanilha, { type: 'buffer' });
-    
+        
+        let aba;
         // Assumindo que há apenas uma folha na planilha
-        const nomeDaAba = workbook.SheetNames[4];
-        const dados = xlsx.utils.sheet_to_json(workbook.Sheets[nomeDaAba]);
+        if(page == 'membros'){
 
-        dados.splice(0, 2);
-		
-        
-        dados.splice(19);
-        
+            aba = workbook.SheetNames[4];
+        }
+        else{
+            aba = workbook.SheetNames[10];
+        }
+
+        const dados = xlsx.utils.sheet_to_json(workbook.Sheets[aba]);
+
+        if(page == 'membros'){
+            dados.splice(0, 2);
+            dados.splice(19);
+        }
+        else{
+            dados.splice(0, 3);
+        }
 
         return Response.json({ dados });
+
     } catch (error) {
       console.error('Erro ao ler a planilha:', error);
       return Response.json({ erro: 'Erro interno do servidor' });

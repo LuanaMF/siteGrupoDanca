@@ -85,13 +85,11 @@ export default function Membros() {
 	const [dançarinas, setDançarinas] = useState([]);
 	const [teste, setTeste] = useState([]);
 
-	const [title, setTitle] = useState('');
-
 	useEffect(() => {
 		const handler = async () => {
 		
 			try {
-				const response = await fetch('/api');
+				const response = await fetch('/api?query=membros');
 			
 				if (!response.ok) {
 				  throw new Error('Erro na requisição');
@@ -128,13 +126,6 @@ export default function Membros() {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		adaptiveHeight: true,
-		afterChange: (current: any) =>  setTitle(() => {
-			if (current === 0) {
-				return 'Dançarinos';
-			} else {
-				return 'Fase teste';
-			}
-		}),
 		responsive: [
 		  {
 			breakpoint: 768, // Breakpoint para dispositivos menores
