@@ -88,7 +88,7 @@ export default function RootLayout({
               >
                 <Membros />
               </motion.div>
-            {/* 
+            
               <motion.div
                 ref={refAtividades}
                 initial="hidden"
@@ -98,15 +98,16 @@ export default function RootLayout({
               >
                 <Atividades />
               </motion.div>
-              <motion.div
+              
+              {/* <motion.div
                 ref={refContato}
                 initial="hidden"
                 animate={inViewContato ? "visible" : "hidden"}
                 variants={sectionVariants}
                 transition={{ duration: 0.9}}
               >
-                <Contato />
-              </motion.div> */} 
+                <Contato></Contato>
+              </motion.div>  */}
             
             </motion.main>
           </div>
