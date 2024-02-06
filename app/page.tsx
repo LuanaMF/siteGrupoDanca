@@ -125,14 +125,15 @@ function cardSobreNos(){
 
 function Principal(){
   return(
-    <div id="divPrincipal" className="grid grid-rows-3 grid-cols-3">
+    <div id="divPrincipal" className="grid grid-rows-3 grid-cols-3 -mt-4">
 
       <div className="w-full h-full flex justify-center row-span-2">
         <Image
+       
           src='/imgs/img2.jpg'
           alt='InFlame - Anderson Moreira Fotografia'
-          className="object-cover w-full h-full"
-          width={300}
+          className="object-cover w-full h-full imagem"
+          width={400}
           height={200}
           classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
         />
@@ -144,10 +145,11 @@ function Principal(){
 
      <div className="w-full h-full flex justify-center">
         <Image
+        id="img-2"
           src='/imgs/img2.jpg'
           alt='InFlame - Anderson Moreira Fotografia'
-          className="object-cover w-full h-full"
-          width={300}
+          className="object-cover w-full h-full imagem"
+          width={400}
           height={200}
           classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
         />
@@ -157,7 +159,7 @@ function Principal(){
         <Image
           src='/imgs/img1.jpg'
           alt='InFlame - Anderson Moreira Fotografia'
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full imagem"
           width={350}
           height={200}
           classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}
@@ -168,7 +170,7 @@ function Principal(){
         <Image
           src='/imgs/grupo-danca2.jpg'
           alt='InFlame - Anderson Moreira Fotografia'
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-full imagem"
           width={350}
           height={200}
           classNames={{'wrapper': ['mt-8', 'gradient-border'], img: ['m-0', 'border-pessego', 'border-8', 'rounded-none']}}

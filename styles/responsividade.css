@@ -1,24 +1,31 @@
 /* Até 400px */
 @media screen and (max-width: 400px) {
     #title-cia{
-        display: none;
+      margin-top: -8px;
     }
+
     #slide-quemSomos{
        padding-right: 100px;
     }
     #formacao{
         font-size: 13px;
     }
-    #grid-row {
-        width: 90%;
+    #divPrincipal {
+        grid-template-rows: repeat(2, 2fr) !important;
+        grid-template-columns: repeat(2, 2fr) !important;
     }
+    
     #grid-row {
         display: grid !important;
+        width: 90%;
         grid-template-rows: 0.3fr 2fr 2fr 2fr 2fr 2fr !important;
         grid-template-columns: repeat(2, 2fr) !important;
     }
     .text-card{
         font-size: 10px;
+    }
+    .imagem{
+        width: 400px;
     }
 }   
 
