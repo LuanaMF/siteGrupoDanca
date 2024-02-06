@@ -1,6 +1,7 @@
 "use client"
 
 import "@/styles/globals.css";
+import "@/styles/responsividade.css";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
 import clsx from "clsx";
@@ -78,7 +79,7 @@ export default function RootLayout({
               </motion.div>
 
               <motion.div
-              
+                className="center"
                 ref={refMembros}
                 initial="hidden"
                 animate={inViewMembros ? "visible" : "hidden"}

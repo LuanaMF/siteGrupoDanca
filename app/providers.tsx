@@ -6,7 +6,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
 import { Navbar } from "@/components/navbar";
-import { useEffect, useState } from "react";
+
 
 
 export interface ProvidersProps {
@@ -21,7 +21,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 	return (
 		<NextUIProvider navigate={router.push}>
 			<NextThemesProvider {...themeProps}>
-					<Navbar/>	
+					<Navbar/>
 					{children}
 			</NextThemesProvider>
 		</NextUIProvider>

@@ -1,0 +1,149 @@
+
+/* Até 600px */
+@media screen and (max-width: 600px) {
+    #title-cia{
+      font-size: 60px !important;
+      margin: 15px;
+      
+    }
+    #slide-quemSomos{
+        padding-right: 20px;
+    }
+
+    #title-quem-somos{
+        display: flex;
+        font-size: 60px;
+        justify-content: center;
+        justify-items: center;
+    }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 2 / span 2;
+    }
+    #grid-row-card {
+        display: grid !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    #slider-sobreNos{
+        width: 100%;
+        height: 100%;
+    }
+    #card-sobreNos{
+        margin-top: -20px;
+        margin-left: -35px;
+        height: 600px !important;
+    }
+
+}
+/* Uncover: 600 - 970 */
+
+/* A partir de 970px */
+@media screen and (min-width: 970px){
+    #grid-row-card {
+        display: grid !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #div-historia{
+        grid-column: span 2 / span 2;
+    }
+}
+
+/* Até 979px */
+/* Pega de 600 a 979 */
+@media screen and (max-width: 979px){
+    #divPrincipal{
+        display: grid !important;
+        gap: 15px;
+    }
+    #slide-quemSomos{
+        margin: 10px;
+    }
+   
+    #title-cia{
+        font-size: 60px !important;
+        margin: 15px; 
+    }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 2 / span 2;
+    }
+}
+
+/* De 980 a 1149 */
+@media screen and (min-width: 980px) and (max-width: 1149px) {
+  #title-cia, #title-membros {
+    font-size: 80px;
+  }
+   
+  #title-quem-somos{
+      font-size: 90px;
+  }
+  #slide-quemSomos{
+      margin: 10px;
+  }
+  #grid-row {
+      display: grid !important;
+      grid-template-rows: 0.3fr 1fr 1fr !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+  }
+  #membros-desc{
+      grid-column: span 4 / span 4;
+  }
+  #grid-row-card {
+      display: grid !important;
+      grid-template-rows: repeat(2, 1fr) !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #div-historia{
+      grid-column: span 2 / span 2;
+  }
+
+}
+  
+/* de 1149 até infinito e além */
+@media screen and (min-width: 1150px) {
+
+    #title-cia {
+      font-size: 120px;
+    }
+
+    #title-quem-somos{
+      font-size: 100px;
+    }
+
+    #slide-quemSomos{
+        margin: 15px;
+    }
+
+    #div-membros{
+        height: 80%;
+    }
+
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: 0.3fr 1fr  !important;
+        grid-template-columns: repeat(6, 1fr) !important;
+    }
+    #membros-desc{
+        grid-column: span 6 / span 6;
+    }
+    
+    #grid-row-card {
+        display: grid !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    #div-historia{
+        grid-column: span 2 / span 2;
+    }
+}

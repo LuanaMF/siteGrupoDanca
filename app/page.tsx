@@ -12,186 +12,115 @@ import SchoolIcon from '@mui/icons-material/School';
 import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
+import PushPinIcon from '@mui/icons-material/PushPin';
+import { Logo, LogoMarrom } from "@/components/icons";
 
-function titleQuemSomos(){
-  return(
-    <div className="center laranjao">
-      <h1 id="title-quem-somos" className={`${title()} tracking-wide font-serif row-span-1 justify-self-start`}>Quem somos</h1>
-    </div>    
-  );
-}
 
 function cardSobreNos(){
-  return(
-    <Card 
-    
-      className="
-      levitating m-0 rounded-lg 
-      border-8 border-pessego border-double
-      shadow-lg shadow-marrom" >
-        
-        <CardHeader className="center">
 
-          <Code className="center bg-laranjao w-full opacity-85">
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
-              <h2 className="icon_label !text-xl !text-center">
-                  Sobre nós
-              </h2> 
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
-          </Code>
-          
-        </CardHeader>
-        <CardBody className=" grid grid-rows-3 grid-cols-1 gap-3 ">
-          <h2 className="icon_label center ml-2">
-            <InfoIcon sx={{  fontSize: '25px' }}></InfoIcon>
-            Aulas | Eventos | Espetáculos
-          </h2>
-          <h2 className="icon_label center">
-            <ApartmentIcon sx={{  fontSize: '25px' }}></ApartmentIcon>
-            Empresa de pequeno porte
-          </h2>
-          <h2 className="icon_label center ">
-            <GroupsIcon sx={{ fontSize: '25px' }}></GroupsIcon>
-            25 integrantes (elenco fixo)
-          </h2>
-        </CardBody>
-      </Card>
-  );
-}
-
-function cardDirecao(){
-  return(
-    <Card 
-        className="
-        levitating
-        ml-0 rounded-lg 
-        border-8 border-pessego border-double 
-        shadow-lg shadow-marromVermelho">
-        <CardHeader className="center">
-          <Code className="center bg-laranjao w-full opacity-85">
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
-              <h2 className="icon_label !text-xl text-center">
-                Direção
-              </h2>
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
-          </Code>
-        </CardHeader>
-
-        <CardBody className=" grid grid-rows-4 grid-cols-1 items-center ">
-
-          <div className="center">
-            <Avatar radius="full" size="md" src="/imgs/fotoPessoa.png" />
-            <div className="flex flex-col items-start justify-center ">
-              <h4 className="text-md font-bold leading-none text-marrom ml-2">Juliana Mascarenhas</h4>
-            </div>
-          </div>
-
-          <h2 className="icon_label">
-            <InfoIcon sx={{ fontSize: '25px', color: "#601802" }}></InfoIcon>
-            Uma das fundadoras iniciais
-          </h2>
-          <h2 className="icon_label ">
-            <StarIcon sx={{ fontSize: '25px', color: "#601802" }}></StarIcon>
-            Dançarina e coreógrafa
-          </h2>
-          <div>
-            <h2 className="icon_label">
-              <SchoolIcon sx={{ fontSize: '25px', color: "#601802" }}></SchoolIcon>
-                Licenciada e Bacharel em Dança 
-                 -
-                <span className="text-marrom center font-bold items-center -ml-1">
-                <PlaceIcon sx={{ fontSize: '20px', color: "#601802" }}></PlaceIcon>
-                UFBA
-                </span>
-            </h2>
-            
-          </div>
-          
-        </CardBody>
-      </Card>
-  );
-}
-
-function cardHistoria(){
-
-  //Historia
-  const historia = [
+   //Historia
+   const historia = [
     'Fundada em OUT/2012 - Feira de Santana, BA',
     'Surgiu a partir de uma apresentação realizada no Colégio Padre Ovídio pelas alunas do 1º ano.',
     'A princípio, definiu-se como um grupo de dança o qual participava de eventos culturais da cidade',
     'Em 2018, estabeleceu-se como companhia e tem como foco a realização de eventos, espetáculos, oficinas e aulas regulares de dança.'
   ]
- 
-  //Valores
-  const valores = [
-    'Diversidade',
-    'Ética',
-    'Transparência',
-    'Comprometimento',
-    'Responsabilidade',
-    'Cooperação',
-    'Respeito',
-    'Profissionalismo'
-  ]
-
   return(
+    <Card 
+      id="card-sobreNos"
+      className="
+      min-w-[450px]
+      levitating m-0 rounded-lg 
+      border-8 border-pessego border-double
+      shadow-lg shadow-marrom" >
 
-    <Card  className="
-            h-[500px]
-            levitating
-            border-8 border-pessego border-double 
-            shadow-lg shadow-marromVermelho"
-    >
-        <CardHeader className="center">
-          <Code className="center bg-laranjao w-full opacity-85">
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
-              <h2 className="icon_label !text-xl text-center">
-                Nossa História
-              </h2>
-            <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
-          </Code>
-        </CardHeader>
+        <CardBody id="grid-row-card" className="gap-3">
 
-        <CardBody className="gap-3 items-center">
+          <div className="grid gap-2">
+              
+            <Code className="center bg-laranjao w-full opacity-85">
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
+                <h2 className="icon_label !text-xl !text-center">
+                    Sobre nós
+                </h2> 
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
+            </Code>
 
-          {historia.map((valor, index)=> (
-            <h2 key={index} className="text-md font-bold text-marrom  indent-3 ">
-              <InfoIcon sx={{ fontSize: '20px', color: "#601802", marginRight: '2px' }}></InfoIcon>
-              {valor}
+            <h2 className="icon_label center ml-2">
+              <InfoIcon sx={{  fontSize: '25px' }}></InfoIcon>
+              Aulas | Eventos | Espetáculos
             </h2>
-          ))}
+
+            <h2 className="icon_label center">
+              <ApartmentIcon sx={{  fontSize: '25px' }}></ApartmentIcon>
+              Empresa de pequeno porte
+            </h2>
+
+            <h2 className="icon_label center ">
+              <GroupsIcon sx={{ fontSize: '25px' }}></GroupsIcon>
+              25 integrantes (elenco fixo)
+            </h2>
+          </div>
+         
+          <div className="grid gap-2">
+            <Code className="center bg-laranjao w-full opacity-85">
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
+                <h2 className="icon_label !text-xl text-center">
+                  Direção
+                </h2>
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
+            </Code>
+
+            <div className="center">
+              <Avatar radius="full" size="lg" src="/imgs/fotoPessoa.png" />
+              <div className="flex flex-col items-start justify-center ">
+                <h4 className="text-lg font-bold leading-none text-marrom ml-4">Juliana Mascarenhas</h4>
+              </div>
+            </div>
+
+            <Divider></Divider>
+            <h2 className="icon_label  ">
+              <InfoIcon sx={{ fontSize: '25px', color: "#601802" }}></InfoIcon>
+              Uma das fundadoras iniciais
+            </h2>
+
+            <h2 className="icon_label  ">
+              <StarIcon sx={{ fontSize: '25px', color: "#601802" }}></StarIcon>
+              Dançarina e coreógrafa
+            </h2>
+
+            <div>
+              <h2 className="icon_label">
+                <SchoolIcon sx={{ fontSize: '25px', color: "#601802" }}></SchoolIcon>
+                  Licenciada e Bacharel em Dança 
+                  -
+                  <span className="text-marrom center font-bold items-center">
+                  <PlaceIcon sx={{ fontSize: '20px', color: "#601802" }}></PlaceIcon>
+                  UFBA
+                  </span>
+              </h2>
+            </div>
+          </div>
+
+          <div id="div-historia" className="">
+            <Code className="center bg-laranjao w-full opacity-85">
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginRight: '2px' }} />
+                <h2 className="icon_label !text-xl text-center">
+                  Nossa História
+                </h2>
+              <WhatshotIcon sx={{ fontSize: '25px', color: '#601802', marginLeft: '2px' }} />
+            </Code>
+
+            {historia.map((valor, index)=> (
+              <h2 key={index} className="text-md font-bold text-marrom mt-2  indent-3 ">
+                <PushPinIcon sx={{ fontSize: '30px', color: "#601802", marginRight: '3px' }}></PushPinIcon>
+                {valor}
+              </h2>
+            ))}
+          </div>
           
         </CardBody>
-    </Card>
-  );
-}
-
-function quemSomos() {
-  return (
-    <div id="div-quem-somos" className="grid grid-cols-4 grid-rows-2 justify-center items-center" 
-    style={{gridTemplateRows: '1fr 2fr', gridTemplateColumns: '2fr 2fr 1fr 1fr'}}>
-
-      <div className="col-span-2">
-          <div className="h-full">  
-              {titleQuemSomos()}
-          </div>
-        
-      </div>
-      
-      <div className="w-[80%]  mt-8 col-span-2 row-span-2">
-        {cardHistoria()}
-      </div>
-
-      <div className="">
-        {cardSobreNos()}
-      </div>
-
-      <div className=" center">
-        {cardDirecao()}
-      </div>  
-
-    </div>
-
+      </Card>
   );
 }
 
@@ -271,8 +200,8 @@ export default function SobreNos() {
   };
 
   return (
-    <section key={1} id="section-sobreNos" className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen overflow-hidden">
-      <div id="slider-sobreNos" className="w-[95%] h-[90%] p-4" >
+    <section key={1} id="section-sobreNos" className="bg-cover mix-blend-multiply h-screen w-screen overflow-hidden ">
+      <div id="slider-sobreNos" className="center mt-12 p-4 " >
         <Slider {...sliderSettings} className="mt-2 grid w-full h-full">
 
           <div key={1}>
@@ -281,9 +210,9 @@ export default function SobreNos() {
             </div>
           </div>
           
-          <div id="slide-quemSomos" className="h-full" key={2}>
-            <div className="h-full" >
-              {quemSomos()}
+          <div id="slide-quemSomos" className="px-8 py-4" key={2}>
+            <div className="" >
+              {cardSobreNos()}  
             </div>
           </div>
            
