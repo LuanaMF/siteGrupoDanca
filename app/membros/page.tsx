@@ -74,7 +74,7 @@ function identificacao(membro: any){
 		idade = calcularIdade(data);
 	}
 	return (
-		<b className="text-marromVermelho">
+		<b className="text-marromVermelho text-card">
 		{nome +', ' + idade}
 		</b> // Função de exemplo
 	);
@@ -172,7 +172,7 @@ export default function Membros() {
 										key={index}
 										isFooterBlurred
 										radius="lg"
-										className="shadow-marrom shadow-lg min-w-500px"
+										className="shadow-marrom shadow-lg !min-w-500px"
 										classNames={{base: 'gradient-border', body: 'center'}}
 									  >
 										<Image
@@ -180,7 +180,7 @@ export default function Membros() {
 										  className="object-cover border-8 border-pessego border-double"
 										  src="/imgs/fotoPessoa.png"
 										/>
-										<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+										<CardFooter className="bg-pessego text-start before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 max-h-7 shadow-small ml-1 z-10">
 										  {identificacao(membro)}
 										  
 										</CardFooter>
@@ -208,7 +208,7 @@ export default function Membros() {
 									  className="object-cover border-8 border-pessego border-double"
 									  src="/imgs/fotoPessoa.png"
 									/>
-									<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+									<CardFooter className="bg-pessego justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] max-h-6 shadow-small ml-1 z-10">
 									  {identificacao(membro)}
 									  
 									</CardFooter>

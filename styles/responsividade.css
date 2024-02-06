@@ -1,3 +1,26 @@
+/* Até 400px */
+@media screen and (max-width: 400px) {
+    #title-cia{
+        display: none;
+    }
+    #slide-quemSomos{
+       padding-right: 100px;
+    }
+    #formacao{
+        font-size: 13px;
+    }
+    #grid-row {
+        width: 90%;
+    }
+    #grid-row {
+        display: grid !important;
+        grid-template-rows: 0.3fr 2fr 2fr 2fr 2fr 2fr !important;
+        grid-template-columns: repeat(2, 2fr) !important;
+    }
+    .text-card{
+        font-size: 10px;
+    }
+}   
 
 /* Até 600px */
 @media screen and (max-width: 600px) {
@@ -10,12 +33,6 @@
         padding-right: 20px;
     }
 
-    #title-quem-somos{
-        display: flex;
-        font-size: 60px;
-        justify-content: center;
-        justify-items: center;
-    }
     #grid-row {
         display: grid !important;
         grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr !important;
@@ -81,13 +98,11 @@
 
 /* De 980 a 1149 */
 @media screen and (min-width: 980px) and (max-width: 1149px) {
-  #title-cia, #title-membros {
+  #title-cia {
     font-size: 80px;
   }
    
-  #title-quem-somos{
-      font-size: 90px;
-  }
+
   #slide-quemSomos{
       margin: 10px;
   }
@@ -115,10 +130,6 @@
 
     #title-cia {
       font-size: 120px;
-    }
-
-    #title-quem-somos{
-      font-size: 100px;
     }
 
     #slide-quemSomos{

@@ -29,7 +29,6 @@ function cardSobreNos(){
     <Card 
       id="card-sobreNos"
       className="
-      min-w-[450px]
       levitating m-0 rounded-lg 
       border-8 border-pessego border-double
       shadow-lg shadow-marrom" >
@@ -90,7 +89,7 @@ function cardSobreNos(){
             </h2>
 
             <div>
-              <h2 className="icon_label">
+              <h2 id="formacao" className="icon_label">
                 <SchoolIcon sx={{ fontSize: '25px', color: "#601802" }}></SchoolIcon>
                   Licenciada e Bacharel em Dança 
                   -
