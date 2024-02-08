@@ -13,8 +13,8 @@
 }
 .laranjao {
     color: transparent; /* Torna o texto transparente */
-    -webkit-text-stroke: 1px #601802; 
-    background: #601802;
+    -webkit-text-stroke: 2px #8B0000; 
+    background: #FFC04D;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -62,9 +62,8 @@ input{
 
 .body-with-grain-texture {
     background: linear-gradient(45deg, #FFC04D , #FE800A 25%, transparent 25%, transparent 75%, #FE800A 75%, #E5392C),
-    url('/imgs/ink-splash.png'),
+    url('/imgs/ink.png'),
      linear-gradient(45deg, #601802 25%, transparent 25%, transparent 75%, #E5392C 75%, #601802);
-     background-size: cover;
 }
 
 

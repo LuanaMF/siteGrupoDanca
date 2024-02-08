@@ -8,33 +8,44 @@ import {
 	TableColumn,
 	TableRow,
 	TableCell,
-	Code,
-	Divider
+	Code
 } from "@nextui-org/react";
+import * as xlsx from 'xlsx';
+
+
 
 export default function Atividades() {
 
 	const classNames = React.useMemo(
 		() => ({
-		  wrapper: [ "mt-6", "bg-pessego", "w-[100%]", "bg-bottom", "justify-center"],
+		  wrapper: [ "mt-6", "bg-transparent", "w-[100%]", "bg-bottom", "justify-center", "shadow-xl", "shadow-vermelho"],
 		  th: ["bg-laranjao", "text-[#FFFFFF]", "font-extrabold", "tracking-wide", ],
 		  td: [
-			
-			"font-extrabold",
+			"font-extrabold",	
 			"text-base",
 			"font-mono",
-
 		  ],
 		}),
 		[],
 	);
 
 	const [atividades, setAtividades] : any = useState([]);
+
+	const formataData = (data: any) => {
+
+		if(!data.toString().includes('/')){
+			const dataParse = xlsx.SSF.parse_date_code(data);
+			const dataFormatada = `${String(dataParse.d).padStart(2, '0')}/${String(dataParse.m).padStart(2, '0')}/${dataParse.y}`;
+			data = dataFormatada;
+		}
+		return data;
+	}
 	
 	useEffect(() => {
 		const handler = async () => {
 		
 			try {
+				
 				const response = await fetch('/api');
 			
 				if (!response.ok) {
@@ -42,6 +53,12 @@ export default function Atividades() {
 				}
 				else{
 					const data = await response.json(); 
+					
+					data.dados.forEach((item: any) => {
+						if(item.__EMPTY !== 'DATA' && !item.__EMPTY.toString().includes('/')){
+							item.__EMPTY = formataData(item.__EMPTY);
+						}
+					});
 					
 					setAtividades(data.dados);
 					
@@ -58,24 +75,26 @@ export default function Atividades() {
 		
 	},[atividades]);
 
+	
+
 	return (
 		<>
-			<section id="section-atividades" className="flex flex-col items-center justify-center">
+			<section id="section-atividades" className="bg-cover center flex-col mix-blend-multiply w-screen ">
 				
-				<div >
+				<div className="text-center w-[90%]" >
 					
 				    <Code 
-						className="w-full bg-marrom font-bold text-white cursor-none" size="lg">
+						className="w-full bg-marromVermelho font-bold text-white cursor-none" size="lg">
 						Projetos | Oficinas | Apresentações
 					</Code>
 						
 				</div>
 
-				<div className="flex w-[90%]">
+				<div className="w-[80%]">
 					
-					<Table hideHeader aria-label="table" classNames={classNames} >
+					<Table hideHeader isCompact aria-label="table" classNames={classNames} >
 						<TableHeader>
-							<TableColumn width={'30%'}>DATA</TableColumn>
+							<TableColumn key={'data'} width={'30%'} allowsSorting>DATA</TableColumn>
 							<TableColumn>ATV</TableColumn>
 						</TableHeader>
 						<TableBody>
@@ -85,13 +104,13 @@ export default function Atividades() {
 										<TableRow key={index}>
 											<TableCell>
 												<Code 
-													className="w-full bg-marrom font-bold text-white cursor-none" size="lg">
+													className="w-full bg-marromVermelho font-bold text-white cursor-none" size="lg">
 													{atv.__EMPTY}
 												</Code>
 											</TableCell>
-											<TableCell>
+											<TableCell className="overflow-x-hidden w-fit">
 												<Code 
-													className="bg-laranjao font-extrabold text-white cursor-none w-[90%] overflow-hidden" size="lg">
+													className="bg-pessego font-extrabold text-white cursor-none w-[90%] whitespace-pre-wrap" size="lg">
 													{atv.__EMPTY_1}
 												</Code>
 											

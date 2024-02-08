@@ -129,6 +129,9 @@
   #div-historia{
       grid-column: span 2 / span 2;
   }
+    .motion-section-atv{
+     margin-top: 600px;
+    }
 
 }
   
@@ -163,5 +166,8 @@
     }
     #div-historia{
         grid-column: span 2 / span 2;
+    }
+    .motion-section{
+        margin-bottom: 120px;
     }
 }

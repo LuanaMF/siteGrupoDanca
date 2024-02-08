@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import * as xlsx from 'xlsx';
+
 
 const calcularIdade = (dataNascimento: any) => {
     const hoje = new Date();
@@ -31,19 +33,6 @@ const calcularIdade = (dataNascimento: any) => {
 
     return idade;
 };
-
-const dataNasc: any = {
-	36656: '05/10/2000',
-	36898: '01/07/2001',
-	37681: '03/01/2003',
-	37347: '04/01/2002',
-	38477: '05/05/2005',
-	35250: '07/04/1996',
-	35076: '01/12/1996',
-	38536: '07/03/2005',
-	35406: '12/07/1996',
-	35189: '05/04/1996'
-}
 
 
 function identificacao(membro: any){
@@ -67,8 +56,9 @@ function identificacao(membro: any){
 	let idade = dataStr.includes('/') ? calcularIdade(dataStr) : '';
 	
 	if(idade == ''){
-		const data = dataNasc[membro.__EMPTY_4];
-		idade = calcularIdade(data);
+		const data = xlsx.SSF.parse_date_code(membro.__EMPTY_4);
+		const dataFormatada = `${String(data.d).padStart(2, '0')}/${String(data.m).padStart(2, '0')}/${data.y}`;
+		idade = calcularIdade(dataFormatada);
 	}
 	return (
 		<b className="text-marromVermelho text-card">
@@ -141,7 +131,7 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover mix-blend-multiply flex flex-col items-center justify-center h-screen w-screen ">
+			className="bg-cover flex-col mix-blend-multiply w-screen ">
 
 				<div id="div-membros">
 

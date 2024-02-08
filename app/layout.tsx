@@ -66,9 +66,16 @@ export default function RootLayout({
           themeProps={{ attribute: "class", defaultTheme: "light", forcedTheme: "light" }}
         >
           <div className="relative flex flex-col h-screen overflow-hidden">
-            <motion.main className="body-with-grain-texture bg-cover mix-blend-multiply flex-grow overflow-y-scroll w-fit h-screen">
-            {/* bg-[url('/imgs/fundo-vermelho-blur.png')] */}
+            <motion.main 
+            className="body-with-grain-texture 
+            bg-cover mix-blend-multiply 
+            flex-grow overflow-y-scroll 
+            w-fit h-screen
+            "
+            >
+           
               <motion.div
+                className="motion-section"
                 ref={refSobreNos}
                 initial="hidden"
                 animate={inViewSobreNos ? "visible" : "hidden"}
@@ -79,7 +86,7 @@ export default function RootLayout({
               </motion.div>
 
               <motion.div
-                className="center"
+                className="center motion-section"
                 ref={refMembros}
                 initial="hidden"
                 animate={inViewMembros ? "visible" : "hidden"}
@@ -90,6 +97,7 @@ export default function RootLayout({
               </motion.div>
             
               <motion.div
+                className="motion-section-atv"
                 ref={refAtividades}
                 initial="hidden"
                 animate={inViewAtividades ? "visible" : "hidden"}
