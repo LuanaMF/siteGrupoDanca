@@ -1,16 +1,18 @@
 import {
 	Code,
 	Card,
-	CardBody,
 	Image,
 	CardFooter,
-	CardHeader
+	Button,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import * as xlsx from 'xlsx';
+import React from "react";
+import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
+import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
 
 const calcularIdade = (dataNascimento: any) => {
@@ -71,6 +73,8 @@ function identificacao(membro: any){
 
 export default function Membros() {	
 
+	const slider = React.useRef<any>(null);
+	
 	const [membros, setMembros] : any = useState([]);
 	const [dançarinas, setDançarinas] = useState([]);
 	const [teste, setTeste] = useState([]);
@@ -131,13 +135,17 @@ export default function Membros() {
 	return (
 		<>
 			<section id="section-membros" 
-			className="bg-cover flex-col mix-blend-multiply w-screen ">
+			className="bg-cover flex-col mix-blend-multiply w-screen h-screen overflow-hidden mb-[40px]">
 
 				<div id="div-membros">
-
+						
 					<div className="p-4 center">
-						<Slider {...sliderSettings} className=" grid h-screen w-[90%]">
+						<Button isIconOnly onClick={() => slider?.current?.slickPrev()} className="bg-laranjao z-[100]">
+							<ArrowCircleLeftRoundedIcon sx={{color: "white"}}></ArrowCircleLeftRoundedIcon>
+						</Button>
 
+						<Slider ref={slider} {...sliderSettings} className=" grid h-screen w-[90%]">
+							
 							<div key={1} id="grid-row" 	className="grid gap-4 px-4 py-4">
 								<Code id="membros-desc" className="center bg-marrom text-pessego2 text-2xl">
 									Dançarinos
@@ -195,6 +203,11 @@ export default function Membros() {
 							</div>
 							
 						</Slider>
+
+						<Button isIconOnly onClick={() => slider?.current?.slickNext()} className="bg-laranjao">
+							<ArrowCircleRightRoundedIcon sx={{color: "white"}}></ArrowCircleRightRoundedIcon>
+						</Button>
+
 					</div>
 					
 				</div>

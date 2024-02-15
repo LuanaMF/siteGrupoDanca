@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { title, subtitle } from "@/components/primitives";
-import { Avatar, Card, CardBody, CardFooter, CardHeader, Code, Divider, Image } from "@nextui-org/react";
+import { Avatar, Button, Card, CardBody, CardFooter, CardHeader, Code, Divider, Image } from "@nextui-org/react";
 import InfoIcon from '@mui/icons-material/Info';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -13,8 +13,9 @@ import StarIcon from '@mui/icons-material/Star';
 import WhatshotIcon from '@mui/icons-material/Whatshot';
 import PlaceIcon from '@mui/icons-material/Place';
 import PushPinIcon from '@mui/icons-material/PushPin';
-import { Logo, LogoMarrom } from "@/components/icons";
-
+import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
+import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
+import React from "react";
 
 function cardSobreNos(){
 
@@ -182,6 +183,8 @@ function Principal(){
 }
 
 export default function SobreNos() {
+  const slider = React.useRef<any>(null);
+
 
   const sliderSettings = {
     dots: false,
@@ -203,7 +206,11 @@ export default function SobreNos() {
   return (
     <section key={1} id="section-sobreNos" className="bg-cover mix-blend-multiply h-screen w-screen overflow-hidden ">
       <div id="slider-sobreNos" className="center mt-12 p-4 " >
-        <Slider {...sliderSettings} className="mt-2 grid w-full h-full">
+            <Button isIconOnly onClick={() => slider?.current?.slickPrev()} className="bg-laranjao z-[100]">
+							<ArrowCircleLeftRoundedIcon sx={{color: "white"}}></ArrowCircleLeftRoundedIcon>
+						</Button>
+
+        <Slider ref={slider} {...sliderSettings} className="mt-2 grid w-full h-full">
 
           <div key={1}>
             <div id="slide-principal" className="" >
@@ -218,6 +225,10 @@ export default function SobreNos() {
           </div>
            
         </Slider>
+
+          <Button isIconOnly onClick={() => slider?.current?.slickNext()} className="bg-laranjao">
+							<ArrowCircleRightRoundedIcon sx={{color: "white"}}></ArrowCircleRightRoundedIcon>
+						</Button>
       </div>
     </section>
   );

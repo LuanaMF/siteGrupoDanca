@@ -68,7 +68,7 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen overflow-hidden">
             <motion.main 
             className="body-with-grain-texture 
-            bg-cover mix-blend-multiply 
+            !bg-repeat-round	 mix-blend-multiply 
             flex-grow overflow-y-scroll 
             w-fit h-screen
             "

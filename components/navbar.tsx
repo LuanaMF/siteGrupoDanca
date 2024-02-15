@@ -26,10 +26,28 @@ export const Navbar  = () => {
 	const [section, setSection] = useState('section-sobreNos');
 
 	const handleNavigationClick = (sectionId: string) => {
-	  setScrolling(true);
-	  setSection(sectionId);
-	  document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-	  setTimeout(() => setScrolling(false), 1000);
+		console.log(sectionId);
+		setScrolling(true);
+		setSection(sectionId);
+		const sectionElement = document.getElementById(sectionId);
+		if (sectionElement) {
+			sectionElement.scrollIntoView({ behavior: 'smooth' });
+
+			if(sectionId === 'section-atividades'){
+				sectionElement.style.marginTop = '200px'; 
+			}
+			else if(sectionId === 'section-sobreNos'){
+				sectionElement.style.marginTop = '28px'; 
+			}
+			else{
+
+				sectionElement.style.marginTop = '40px'; 
+			}
+			
+			setTimeout(() => {
+				setScrolling(false);
+			}, 1000);
+		}
 	};
 
 	return (

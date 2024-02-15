@@ -15,10 +15,11 @@ import * as xlsx from 'xlsx';
 
 
 export default function Atividades() {
+	
 
 	const classNames = React.useMemo(
 		() => ({
-		  wrapper: [ "mt-6", "bg-transparent", "w-[100%]", "bg-bottom", "justify-center", "shadow-xl", "shadow-vermelho"],
+		  wrapper: [ "mt-6", "bg-transparent", "w-[100%]", "bg-bottom", "justify-center"],
 		  th: ["bg-laranjao", "text-[#FFFFFF]", "font-extrabold", "tracking-wide", ],
 		  td: [
 			"font-extrabold",	
@@ -75,11 +76,19 @@ export default function Atividades() {
 		
 	},[atividades]);
 
-	
+	window.onload = function(){
+		const element: any = document.getElementById('section-atividades');
+		console.log(element.getBoundingClientRect().top);
+		if (element.getBoundingClientRect().top < 0) {
+			const currentMarginTop = parseFloat(window.getComputedStyle(element).marginTop);
+			const marginToAdd = Math.abs(element.getBoundingClientRect().top) + currentMarginTop;
+			element.style.marginTop = '800px';
+		}
+	}
 
 	return (
 		<>
-			<section id="section-atividades" className="bg-cover center flex-col mix-blend-multiply w-screen ">
+			<section id="section-atividades" className="bg-cover center flex-col w-screen h-screen mix-blend-multiply ">
 				
 				<div className="text-center w-[90%]" >
 					
@@ -110,7 +119,7 @@ export default function Atividades() {
 											</TableCell>
 											<TableCell className="overflow-x-hidden w-fit">
 												<Code 
-													className="bg-pessego font-extrabold text-white cursor-none w-[90%] whitespace-pre-wrap" size="lg">
+													className="bg-laranjao font-extrabold text-white cursor-none w-[90%] whitespace-pre-wrap" size="lg">
 													{atv.__EMPTY_1}
 												</Code>
 											
